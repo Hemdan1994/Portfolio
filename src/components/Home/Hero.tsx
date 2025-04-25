@@ -6,6 +6,7 @@ import ProfileImage from './ProfileImage';
 import TypewriterEffect from '../ui/type-writer-effect';
 import bgImage from '../../../src/assets/images/bg.jpeg';
 const Hero = () => {
+  const bgImg = new URL('../../../src/assets/images/bg.jpeg', import.meta.url).href;
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
