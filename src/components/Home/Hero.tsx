@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import ProfileImage from './ProfileImage';
 import TypewriterEffect from '../ui/type-writer-effect';
-
+import bgImage from '../../../src/assets/images/bg.jpeg';
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen relative overflow-hidden bg-gradient-to-b from-navy to-navy-dark">
-      <div className="absolute inset-0 bg-[url('./../../../src/assets/images/bg.jpeg')] opacity-5 bg-fixed bg-cover bg-center" />
+      <div className="absolute inset-0  opacity-5 bg-fixed bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }} />
       
       <div className="relative z-10 flex items-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center w-full">
