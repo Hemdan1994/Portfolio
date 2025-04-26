@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Github, ExternalLink } from 'lucide-react';
+import SmartJobs from '../../../src/assets/images/smartjobs.jpeg';
+import Drjobs from '../../../src/assets/images/dr.jpeg';
+import Diwan from '../../../src/assets/images/diwan.jpg';
+import cvshots from '../../../src/assets/images/cvshots.jpeg';
+import PrintPerson from '../../../src/assets/images/bg.jpeg';
+import EHA from '../../../src/assets/images/eha.jpeg';
+import Alnada from '../../../src/assets/images/alnada.jpg';
+import AlmoniaryCorn from '../../../src/assets/images/olive.jpg';
+import AlmoniaryGroup from '../../../src/assets/images/monairy.jpg';
+import Tekegy from '../../../src/assets/images/tekegy.jpeg';
+import Bhub from '../../../src/assets/images/bhub.jpg';
+import Miasset from '../../../src/assets/images/mi-asset.jpeg';
+import Oper8ly from '../../../src/assets/images/oper8ly.jpeg';
+import Facilities from '../../../src/assets/images/facilities.jpeg';
+import Ektsad from '../../../src/assets/images/ektsad.jpeg';
+import bosla from '../../../src/assets/images/bosla.jpeg';
 
 interface Project {
   title: string;
@@ -15,7 +31,7 @@ const projects: Project[] = [
   {
     title: "Smart Jobs",
     description: "International recruitment platform with advanced AI features including video CV generation, job matching, and skill recommendations. Separate dashboards for candidates and employers.",
-    image: "../../../src/assets/images/smartjobs.jpeg",
+    image: SmartJobs,
     tech: ["React.js 18", "Next.js", "Redux", "Chart.js", "Formik", "SASS","Bootstrap" , "Tailwind Css"],
     link: "https://globalsmartjobs.com",
     featured: true
@@ -23,7 +39,7 @@ const projects: Project[] = [
   {
     title: "DrJobs",
     description: "Comprehensive recruitment platform integrated with major ATS providers like ZOHO and JobSoid. Features employee and employer dashboards with advanced matching capabilities.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+    image: Drjobs,
     tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap" , "React.js 18" , "Material UI"],
     link: "https://drjobs.ae",
     featured: true
@@ -31,7 +47,7 @@ const projects: Project[] = [
   {
     title: "Diwan E-Book Reader",
     description: "Digital learning platform for UAE Ministry of Education featuring e-books, podcasts, videos, and magazine content with interactive reading capabilities.",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2073&auto=format&fit=crop",
+    image: Diwan,
     tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap"],
     link: "#",
     featured: true
@@ -39,7 +55,7 @@ const projects: Project[] = [
   {
     title: "CV Shots",
     description: "Innovative video resume platform connecting job seekers and employers. Features video introductions and advanced search capabilities for faster recruitment.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
+    image: cvshots,
     tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap"],
     link: "#",
     featured: false
@@ -55,7 +71,7 @@ const projects: Project[] = [
   {
     title: "Egyptian Hotels Association (EHA)",
     description: "An Egyptian Organization for Rating the hotels and giving the Regulation and Standards ",
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop",
+    image: EHA,
     tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "JSON", "Ajax"],
     link: "http://www.egyptianhotels.org/",
     featured: false
@@ -63,7 +79,7 @@ const projects: Project[] = [
   {
     title: "Al-nada Mills",
     description: "Corporate website showcasing company products, categories, portfolio, and timeline with interactive features.",
-    image: "https://images.unsplash.com/photo-1518122043280-ffd6c8f273d1?q=80&w=2070&auto=format&fit=crop",
+    image: Alnada,
     tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "JSON", "Ajax"],
     link: "http://alnadamills.com",
     featured: true
@@ -71,7 +87,7 @@ const projects: Project[] = [
   {
     title: "Al-monairy Corn",
     description: "Company website featuring product catalogs, portfolio showcase, and interactive timeline.",
-    image: "https://images.unsplash.com/photo-1595974482597-4b8dc398bed8?q=80&w=2073&auto=format&fit=crop",
+    image: AlmoniaryCorn,
     tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"],
     link: "https://olivelandeg.com",
     featured: true
@@ -79,7 +95,7 @@ const projects: Project[] = [
   {
     title: "Elmonairy Group",
     description: "Corporate website with services showcase, portfolio display, and company timeline integration.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    image: AlmoniaryGroup,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "https://almonairycorn.com",
     featured: false
@@ -87,7 +103,7 @@ const projects: Project[] = [
   {
     title: "Tekegy",
     description: "Company portfolio website featuring services, projects, and interactive timeline.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    image: Tekegy,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://tekegy.com",
     featured: false
@@ -95,7 +111,7 @@ const projects: Project[] = [
   {
     title: "B-HUB",
     description: "Business hub platform showcasing services, portfolio, and company milestones.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
+    image: Bhub,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://theb-hub.com",
     featured: false
@@ -103,7 +119,7 @@ const projects: Project[] = [
   {
     title: "Olamarine",
     description: "E-commerce website for fishing equipment with locations in Cairo & Hurghada.",
-    image: "https://images.unsplash.com/photo-1484507175567-8f1b69979472?q=80&w=2071&auto=format&fit=crop",
+    image: Bhub,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://olamarine.com",
     featured: false
@@ -111,7 +127,7 @@ const projects: Project[] = [
   {
     title: "Mi-asset",
     description: "RTL website showcasing company services, portfolio, and timeline with Arabic support.",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop",
+    image: Miasset,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://mi-asset.com",
     featured: false
@@ -119,7 +135,7 @@ const projects: Project[] = [
   {
     title: "Oper8ly",
     description: "RTL corporate website with service offerings, portfolio showcase, and company history.",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop",
+    image: Oper8ly,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://oper8ly.com",
     featured: false
@@ -127,23 +143,15 @@ const projects: Project[] = [
   {
     title: "Facilities",
     description: "RTL service company website with portfolio and interactive features.",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop",
+    image: Facilities,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
-    link: "http://facilities-eg.com",
-    featured: false
-  },
-  {
-    title: "AGC Group",
-    description: "Corporate website showcasing company services, portfolio, and package pricing with interactive maps and contact features.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap"],
-    link: "https://agc-groups.com",
+    link: "#",
     featured: false
   },
   {
     title: "El Ektsad welbnok",
     description: "RTL news website with comprehensive content management and timeline features.",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop",
+    image: Ektsad,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://elektsadwelbnooknews.com",
     featured: false
@@ -151,7 +159,7 @@ const projects: Project[] = [
   {
     title: "Bosla News",
     description: "RTL news platform featuring services, portfolio, and company timeline integration.",
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop",
+    image: bosla,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "http://alboslanews.com",
     featured: false
