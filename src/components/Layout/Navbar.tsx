@@ -53,16 +53,13 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
+    <>
     <header 
-      className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-300',
-        scrolled 
-          ? theme === 'dark' 
-            ? 'bg-navy/90 backdrop-blur-sm shadow-lg py-3' 
-            : 'bg-white/90 backdrop-blur-sm shadow-lg py-3'
-          : 'bg-transparent py-5'
-      )}
-    >
+        className={cn(
+          'fixed top-0 w-full z-40 transition-all duration-300',
+          scrolled ? 'bg-navy/90 backdrop-blur-sm shadow-lg py-3' : 'bg-transparent py-5'
+        )}
+      >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="text-highlight text-xl font-bold">
           Portfolio
@@ -144,6 +141,59 @@ const Navbar = () => {
         </div>
       </div>
     </header>
+
+    {isMenuOpen && (
+        <div className="fixed inset-0 z-50 md:hidden">
+          {/* Overlay */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
+          
+          {/* Mobile menu content */}
+          <div 
+            ref={mobileMenuRef}
+            className="fixed inset-y-0 right-0 w-3/4 p-10 bg-navy shadow-xl border-l border-navy-light/20 flex flex-col justify-center transform transition-all duration-300 ease-in-out"
+          >
+            <div className="flex flex-col h-full justify-center space-y-8">
+              {/* Close button with prominent styling */}
+              <button 
+                className="absolute top-6 right-6 bg-highlight text-navy hover:bg-highlight/80 p-3 rounded-full flex items-center justify-center shadow-lg"
+                onClick={closeMenu}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+              
+              {navItems.map((item, index) => (
+                <Link 
+                  key={item.name} 
+                  to={item.path}
+                  className="text-xl font-medium text-white hover:text-highlight"
+                  onClick={closeMenu}
+                >
+                  <span className="text-highlight mr-2">{`0${index + 1}.`}</span>
+                  {item.name}
+                </Link>
+              ))}
+              <a 
+                href="/resume.pdf" 
+                className="btn btn-primary text-center mt-6"
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                Resume
+              </a>
+              <div className="flex justify-center mt-6">
+              <ThemeSwitcher />
+            </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

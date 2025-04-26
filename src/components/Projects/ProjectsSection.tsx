@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     title: "Smart Jobs",
     description: "International recruitment platform with advanced AI features including video CV generation, job matching, and skill recommendations. Separate dashboards for candidates and employers.",
-    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop",
+    image: "../../../src/assets/images/smartjobs.jpeg",
     tech: ["React.js 18", "Next.js", "Redux", "Chart.js", "Formik", "SASS","Bootstrap" , "Tailwind Css"],
     link: "https://globalsmartjobs.com",
     featured: true
@@ -50,6 +50,14 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop",
     tech: ["Magento 2", "HTML5", "CSS3", "JavaScript", "jQuery"],
     link: "https://www.printpersona.com",
+    featured: false
+  },
+  {
+    title: "Egyptian Hotels Association (EHA)",
+    description: "An Egyptian Organization for Rating the hotels and giving the Regulation and Standards ",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop",
+    tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "JSON", "Ajax"],
+    link: "http://www.egyptianhotels.org/",
     featured: false
   },
   {
