@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../ThemeSwitcher';
 import { useTheme } from '../../contexts/ThemeContext';
+import Resume from '../../../resume.pdf'
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -86,7 +87,7 @@ const Navbar = () => {
           ))}
           <ThemeSwitcher />
           <a 
-            href="/resume.pdf" 
+            href= {Resume} 
             className="btn btn-primary"
             target="_blank" 
             rel="noopener noreferrer"
