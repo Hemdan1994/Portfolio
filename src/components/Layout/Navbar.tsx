@@ -6,6 +6,7 @@ import ThemeSwitcher from '../ThemeSwitcher';
 import { useTheme } from '../../contexts/ThemeContext';
 import Resume from '../../../resume.pdf'
 
+
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
@@ -14,7 +15,7 @@ const navItems = [
   { name: 'Projects', path: '/projects' },
   { name: 'Contact', path: '/contact' }
 ];
-
+const Logo = new URL('../../../src/favico.png', import.meta.url).href;
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -63,7 +64,11 @@ const Navbar = () => {
       >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="text-highlight text-xl font-bold">
-          Portfolio
+          <img 
+          src={Logo} 
+          alt="Profile" 
+          className='mx-100% h-12'
+        />
         </Link>
 
         <button 
