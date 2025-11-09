@@ -17,14 +17,14 @@ const certificates: Certificate[] = [
     issuer: "HCLTech",
     date: "June 28, 2025",
     description: `This initiative brought together top technology talent to compete, collaborate, and showcase real-world problem-solving skills in a high-impact, real-time environment. We appreciate your enthusiasm, dedication, and innovative spirit`,
-    pdfPath: "/certificates/Hackathon_Certificate Participation only 169.pdf",
+    pdfPath: "/Hackathon_Certificate Participation only 169.pdf",
   },
   {
     title: "Certified UI Developer",
     issuer: "NTI Egypt",
     date: "March 2022",
     description: "Certified UI Developer with Score test 98%",
-    pdfPath: "/certificates/Certified-UI .pdf",
+    pdfPath: "/Certified-UI .pdf",
     
   },
   {
@@ -32,7 +32,7 @@ const certificates: Certificate[] = [
     issuer: "Drjobs",
     date: "August 2022",
     description: "Delivered a Project before the deadline with unit tests ",
-    pdfPath: "/certificates/top-tech-performance.pdf"
+    pdfPath: "/top-tech-performance.pdf"
 
   }
 ];
