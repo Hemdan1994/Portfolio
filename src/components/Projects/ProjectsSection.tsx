@@ -235,7 +235,7 @@ const ProjectsSection = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10">
         <h2 className="text-3xl font-bold mb-4 sm:mb-0">
-          <span className="text-primary mr-2">04.</span>
+          <span className="text-primary mr-2">05.</span>
           Featured Projects
         </h2>
         

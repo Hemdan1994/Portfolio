@@ -37,7 +37,7 @@ const ContactSection = () => {
     <PageTransition className="section-container">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="section-title !text-center mx-auto after:mx-auto">
-          <span className="text-highlight mr-2">05.</span>
+          <span className="text-highlight mr-2">06.</span>
           Contact
         </h2>
         

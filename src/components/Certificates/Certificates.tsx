@@ -85,7 +85,7 @@ const CertificateSection = () => {
   return (
     <PageTransition className="section-container py-16">
       <h2 className="section-title mb-12">
-        <span className="text-highlight mr-2">04.</span>
+        <span className="text-highlight mr-2">03.</span>
         Certifications
       </h2>
 

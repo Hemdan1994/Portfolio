@@ -122,7 +122,7 @@ const ExperienceSection = () => {
   return (
     <PageTransition className="section-container">
       <h2 className="section-title">
-        <span className="text-highlight mr-2">03.</span>
+        <span className="text-highlight mr-2">04.</span>
         Experience
       </h2>
 
