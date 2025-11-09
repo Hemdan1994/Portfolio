@@ -14,19 +14,38 @@ interface Job {
 
 const jobs: Job[] = [
   {
-    title: "Senior Frontend Developer",
-    company: "Blackstone",
+    title: "Senior Frontend Developer Nextjs",
+    company: "Modsoft UAE",
     duration: "Present",
+    location: "Dubai, UAE (Onsite)",
+    description: [
+      "Use Umbraco CMS Delivery API to handle it with nextjs for better SSR",
+      "Converting Figma mockups into reusable, animated, pixel-perfect components",
+      "Fix SEO issues and meta tags to achieve top scores on Google PageSpeed test",
+      "Test website performance and apply best practices for usability improvements",
+      "Implement front-end architecture to support scalable UI concepts",
+      "Add new features and review the application to meet user and design requirements",
+      "Manage and translate multilingual content"
+    ],
+    tech: ["Git", "Microsoft Azure", "Umbraco" , "Next JS" , "React JS"],
+  },
+
+  {
+    title: "Senior UI Developer",
+    company: "Blackstone UAE",
+    duration: "June 2024 - July 2025 ",
     location: "Cairo, Egypt (Hybrid)",
     description: [
-      "Converted Figma mockups into reusable, animated, pixel-perfect components",
-      "Fixed SEO issues and meta tags to achieve top scores on Google PageSpeed test",
-      "Tested website performance and applied best practices for usability improvements",
-      "Implemented front-end architecture to support scalable UI concepts",
-      "Added new features and reviewed the application to meet user and design requirements",
-      "Managed and translated multilingual content"
+      "Working with Government of Dubai & Ministry of culture for internal Audit systems",
+      "Worked in internal system with Government of Abu-Dhabi",
+      "Using angular 13 , 17 for Front-end Converting Figma mockups into reusable, animated, pixel-perfect components",
+      "Fix SEO issues and meta tags to achieve top scores on Google PageSpeed test",
+      "Test website performance and apply best practices for usability improvements",
+      "Implement front-end architecture to support scalable UI concepts",
+      "Add new features and review the application to meet user and design requirements",
+      "Manage and translate multilingual content"
     ],
-    tech: ["Git", "Microsoft Azure"],
+    tech: ["Git", "Microsoft Azure" , "Angular" , "SEO" , "SSR"],
   },
   {
     title: "Senior Frontend Developer",
@@ -34,14 +53,14 @@ const jobs: Job[] = [
     duration: "May 2023 – March 2024",
     location: "Abu Dhabi, UAE (Remote)",
     description: [
-      "Developed reusable, animated, pixel-perfect components using Next.js and React",
-      "Fixed responsive issues across various screen sizes",
-      "Resolved SEO and meta tag issues for improved Google PageSpeed results",
-      "Collaborated with AI developers to build features like face recognition and CV parsing",
-      "Implemented SSR fixes and dynamic routing solutions",
-      "Handled API requests using Axios",
-      "Reviewed and added new features per UI/UX requirements",
-      "Translated and managed multilingual content"
+      "Develop reusable, animate, pixel-perfect components using Next.js and React",
+      "Fixing responsive issues across various screen sizes",
+      "Resolving SEO and meta tag issues for improve Google PageSpeed results",
+      "Collaborating with AI developers to build features like face recognition and CV parsing",
+      "Implement SSR fixes and dynamic routing solutions",
+      "Handle API requests using Axios",
+      "Review and added new features per UI/UX requirements",
+      "Translate and manage multilingual content"
     ],
     tech: ["Next.js", "React", "Axios", "Git", "Jira", "Bitbucket"]
   },
@@ -51,8 +70,8 @@ const jobs: Job[] = [
     duration: "September 2023 – January 2024",
     location: "Dubai, UAE (Remote - Freelance)",
     description: [
-      "Converted UI/UX mockups into responsive, reusable, pixel-perfect components",
-      "Developed websites using HTML5, CSS3, SASS, Bootstrap (v3–5), Normalize, ECMAScript, and jQuery"
+      "Convert UI/UX mockups into responsive, reusable, pixel-perfect components",
+      "Develop websites using HTML5, CSS3, SASS, Bootstrap (v3–5), Normalize, ECMAScript, and jQuery"
     ],
     tech: ["HTML5", "CSS3", "SASS", "Bootstrap", "Normalize", "ECMAScript", "jQuery"]
   },
@@ -63,11 +82,11 @@ const jobs: Job[] = [
     location: "Abu Dhabi, UAE (Remote)",
     description: [
       "Built responsive, pixel-perfect UI components from UI/UX designs",
-      "Debugged and refactored application code to improve performance",
-      "Developed reusable components using React and Next.js (SSR, CSR, caching)",
-      "Improved page speed and SEO through best practices",
-      "Implemented cache services using Workbox",
-      "Resolved responsive design issues across devices"
+      "Debugg and refactor application code to improve performance",
+      "Develop reusable components using React and Next.js (SSR, CSR, caching)",
+      "Improve page speed and SEO through best practices",
+      "Implement cache services using Workbox",
+      "Resolve responsive design issues across devices"
     ],
     tech: ["HTML5", "CSS3", "SASS", "Bootstrap", "ECMAScript 6", "React", "Next.js", "Git", "Jira", "Bitbucket", "Elastic Search", "Kibana"],
   },
@@ -77,8 +96,8 @@ const jobs: Job[] = [
     duration: "December 2018 – May 2020",
     location: "Remote",
     description: [
-      "Developed websites using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery",
-      "Refactored and cleaned legacy code from unused features"
+      "Develop websites using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery",
+      "Refactor and clean legacy code from unused features"
     ],
     tech: ["HTML5", "CSS3", "Bootstrap", "ECMAScript 6", "jQuery", "Normalize"]
   },
@@ -88,8 +107,8 @@ const jobs: Job[] = [
     duration: "October 2019 – March 2022",
     location: "Remote (Part-time)",
     description: [
-      "Designed and developed website pages using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery",
-      "Customized and modified existing templates"
+      "Design and develop website pages using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery",
+      "Customize and modify existing templates"
     ],
     tech: ["HTML5", "CSS3", "Bootstrap", "ECMAScript 6", "jQuery", "Normalize"]
   }

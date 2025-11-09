@@ -4,13 +4,14 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../ThemeSwitcher';
 import { useTheme } from '../../contexts/ThemeContext';
-import Resume from '../../../resume.pdf'
+import Resume from '../../../Mohamed-Hemdan-CV.pdf'
 
 
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Skills', path: '/skills' },
+  { name: 'Certificates', path: '/certificates' },
   { name: 'Experience', path: '/experience' },
   { name: 'Projects', path: '/projects' },
   { name: 'Contact', path: '/contact' }
