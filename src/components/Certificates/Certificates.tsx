@@ -1,6 +1,9 @@
 import React from 'react';
 import PageTransition from '@/components/Layout/PageTransition';
 import { Card, CardContent } from '@/components/ui/card';
+import hackathonPDF from "@/assets/certificates/hackathon.pdf";
+import certificateUiPDF from "@/assets/certificates/certificate-ui.pdf";
+import topTechPDF from "@/assets/certificates/top-tech.pdf";
 
 interface Certificate {
   title: string;
@@ -17,14 +20,14 @@ const certificates: Certificate[] = [
     issuer: "HCLTech",
     date: "June 28, 2025",
     description: `This initiative brought together top technology talent to compete, collaborate, and showcase real-world problem-solving skills in a high-impact, real-time environment. We appreciate your enthusiasm, dedication, and innovative spirit`,
-    pdfPath: "/hackathon.pdf",
+    pdfPath: hackathonPDF,
   },
   {
     title: "Certified UI Developer",
     issuer: "NTI Egypt",
     date: "March 2022",
     description: "Certified UI Developer with Score test 98%",
-    pdfPath: "/certificate-ui.pdf",
+    pdfPath: certificateUiPDF,
     
   },
   {
@@ -32,7 +35,7 @@ const certificates: Certificate[] = [
     issuer: "Drjobs",
     date: "August 2022",
     description: "Delivered a Project before the deadline with unit tests ",
-    pdfPath: "/top-tech.pdf"
+    pdfPath: topTechPDF
 
   }
 ];
