@@ -1,6 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
-  "home" : "https://hemdan1994.github.io/Portfolio/",
+  "homepage" : "https://hemdan1994.github.io/Portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
