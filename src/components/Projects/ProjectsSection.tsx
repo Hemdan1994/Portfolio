@@ -9,7 +9,6 @@ import PrintPerson from '../../../src/assets/images/bg.jpeg';
 import EHA from '../../../src/assets/images/eha.jpeg';
 import Alnada from '../../../src/assets/images/alnada.jpg';
 import AlmoniaryCorn from '../../../src/assets/images/olive.jpg';
-import AlmonairyGroup from '../../../src/assets/images/monairy.jpg';
 import Tekegy from '../../../src/assets/images/tekegy.jpeg';
 import Bhub from '../../../src/assets/images/bhub.jpg';
 import Miasset from '../../../src/assets/images/mi-asset.jpeg';
@@ -119,14 +118,6 @@ const projects: Project[] = [
     tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"],
     link: "https://olivelandeg.com",
     featured: true
-  },
-  {
-    title: "Elmonairy Group",
-    description: "Corporate website with services showcase, portfolio display, and company timeline integration.",
-    image: AlmonairyGroup,
-    tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
-    link: "https://almonairycorn.com",
-    featured: false
   },
   {
     title: "Tekegy",
