@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import ThemeSwitcher from '../ThemeSwitcher';
 import { useTheme } from '../../contexts/ThemeContext';
-import Resume from '../../../Mohamed-Hemdan-CV.pdf'
+import Resume from '../../../latest-cv.pdf'
 
 
 const navItems = [
