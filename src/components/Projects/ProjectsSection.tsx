@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Github, ExternalLink } from 'lucide-react';
-import SmartJobs from '../../../src/assets/images/smartjobs.jpeg';
+
 import Drjobs from '../../../src/assets/images/dr.jpeg';
 import Diwan from '../../../src/assets/images/diwan.jpg';
 import cvshots from '../../../src/assets/images/cvshots.jpeg';
@@ -17,6 +17,10 @@ import Oper8ly from '../../../src/assets/images/oper8ly.jpeg';
 import Facilities from '../../../src/assets/images/facilities.jpeg';
 import Ektsad from '../../../src/assets/images/ektsad.jpeg';
 import bosla from '../../../src/assets/images/bosla.jpeg';
+import tapking from '../../../src/assets/images/tapking.jpeg';
+import aybank from '../../../src/assets/images/aybank.jpeg';
+import milaya from '../../../src/assets/images/milaya.jpeg';
+import mileo from '../../../src/assets/images/mileo.jpeg';
 
 interface Project {
   title: string;
@@ -29,18 +33,42 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Smart Jobs",
-    description: "International recruitment platform with advanced AI features including video CV generation, job matching, and skill recommendations. Separate dashboards for candidates and employers.",
-    image: SmartJobs,
-    tech: ["React.js 18", "Next.js", "Redux", "Chart.js", "Formik", "SASS","Bootstrap" , "Tailwind Css"],
-    link: "https://globalsmartjobs.com",
+    title: "Aybank",
+    description: "Corporate banking platform with modern UI and content management capabilities. Built with Next.js and integrated with Umbraco CMS Delivery API for flexible content management. Features SSR/SSG for improved performance and SEO, dynamic routing, multilingual support, and secure API handling.",
+    image: aybank,
+    tech: ["Next.js", "Umbraco CMS", "Tailwind CSS", "HTML5", "CSS3", "JavaScript (ES6)", "Axios", "React Query", "Framer-motion"],
+    link: "https://aybank.com",
+    featured: true
+  },
+  {
+    title: "Tapking",
+    description: "Recruitment and talent platform with advanced filtering and user dashboards. Built with Next.js and integrated with Umbraco CMS Delivery API for dynamic content delivery. Features SSR/ISR for real-time updates, Redux Toolkit for state management, lazy loading, code-splitting, and WCAG accessible components.",
+    image: tapking,
+    tech: ["Next.js", "Umbraco CMS", "Material UI", "HTML5", "CSS3", "SASS", "JavaScript (ES6)", "Axios", "Redux Toolkit", "Framer-motion"],
+    link: "https://tapking.com",
+    featured: true
+  },
+  {
+    title: "Mileo Hotels",
+    description: "Hotel booking and hospitality platform with seamless content management and room booking interface. Built with Next.js and integrated with Umbraco CMS Delivery API for dynamic hotel content. Features SSR for fast page loads, responsive design, interactive room booking, multilingual support, and GSAP/Framer-motion animations.",
+    image: mileo,
+    tech: ["Next.js", "Umbraco CMS", "Tailwind CSS", "HTML5", "CSS3", "JavaScript (ES6)", "Axios", "React Query", "Framer-motion", "GSAP"],
+    link: "https://mileohotels.com",
+    featured: true
+  },
+  {
+    title: "Milaya Properties",
+    description: "Dubai real estate platform with direct property listings and zero commission model. Built with Next.js and integrated with Umbraco CMS Delivery API for property management. Features property filtering by unit type (studio to 3-bedroom), community exploration, direct owner communication forms, transparent pricing, FAQ section, and comparison tables.",
+    image: milaya,
+    tech: ["Next.js", "Umbraco CMS", "Tailwind CSS", "HTML5", "CSS3", "JavaScript (ES6)", "Axios", "React Query", "Framer-motion"],
+    link: "https://milayaproperties.com",
     featured: true
   },
   {
     title: "DrJobs",
     description: "Comprehensive recruitment platform integrated with major ATS providers like ZOHO and JobSoid. Features employee and employer dashboards with advanced matching capabilities.",
     image: Drjobs,
-    tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap" , "React.js 18" , "Material UI"],
+    tech: ["HTML5", "SASS", "JavaScript", "jQuery", "Bootstrap", "React.js 18", "Material UI"],
     link: "https://drjobs.ae",
     featured: true
   },
@@ -70,7 +98,7 @@ const projects: Project[] = [
   },
   {
     title: "Egyptian Hotels Association (EHA)",
-    description: "An Egyptian Organization for Rating the hotels and giving the Regulation and Standards ",
+    description: "An Egyptian Organization for Rating the hotels and giving the Regulation and Standards",
     image: EHA,
     tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "JSON", "Ajax"],
     link: "http://www.egyptianhotels.org/",
@@ -95,7 +123,7 @@ const projects: Project[] = [
   {
     title: "Elmonairy Group",
     description: "Corporate website with services showcase, portfolio display, and company timeline integration.",
-    image: AlmoniaryGroup,
+    image: AlmonairyGroup,
     tech: ["HTML5", "CSS3", "SASS", "JavaScript", "jQuery"],
     link: "https://almonairycorn.com",
     featured: false

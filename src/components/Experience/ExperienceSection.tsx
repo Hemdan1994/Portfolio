@@ -16,7 +16,7 @@ const jobs: Job[] = [
   {
     title: "Senior Frontend Developer Nextjs",
     company: "Modsoft UAE",
-    duration: "Present",
+    duration: "July 2025 - Present",
     location: "Dubai, UAE (Onsite)",
     description: [
       "Use Umbraco CMS Delivery API to handle it with nextjs for better SSR",
