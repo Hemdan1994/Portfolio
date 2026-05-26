@@ -9,7 +9,7 @@ import PrintPerson from '../../../src/assets/images/bg.jpeg';
 import EHA from '../../../src/assets/images/eha.jpeg';
 import Alnada from '../../../src/assets/images/alnada.jpg';
 import AlmoniaryCorn from '../../../src/assets/images/olive.jpg';
-import AlmoniaryGroup from '../../../src/assets/images/monairy.jpg';
+import AlmonairyGroup from '../../../src/assets/images/monairy.jpg';
 import Tekegy from '../../../src/assets/images/tekegy.jpeg';
 import Bhub from '../../../src/assets/images/bhub.jpg';
 import Miasset from '../../../src/assets/images/mi-asset.jpeg';
