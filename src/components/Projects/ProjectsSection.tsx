@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Github, ExternalLink } from 'lucide-react';
 
@@ -185,9 +186,23 @@ const projects: Project[] = [
   }
 ];
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const cardVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.98 },
+  visible: { opacity: 1, y: 0, scale: 1 }
+};
+
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
-    <div className="group relative bg-background rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all">
+    <motion.div
+      className="group relative bg-background rounded-lg overflow-hidden shadow-lg"
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45, ease: 'easeOut', delay: index * 0.05 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.99 }}
+    >
       <div className="absolute inset-0 z-10 bg-black/80 transition-opacity opacity-0 group-hover:opacity-90" />
       
       <img 
@@ -239,7 +254,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -284,11 +299,19 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.08 } }
+        }}
+      >
         {filteredProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} index={index} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

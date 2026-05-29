@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import PageTransition from '../Layout/PageTransition';
 import { cn } from '@/lib/utils';
 
@@ -115,6 +116,22 @@ const jobs: Job[] = [
 ];
 
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.08, ease: 'easeOut' } }
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0, x: -16 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: 'easeOut' } }
+};
+
+const activeDetailsVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.35, ease: 'easeOut' } },
+  exit: { opacity: 0, x: -20, transition: { duration: 0.25, ease: 'easeInOut' } }
+};
+
 const ExperienceSection = () => {
   const [activeJobIndex, setActiveJobIndex] = useState(0);
   const activeJob = jobs[activeJobIndex];
@@ -126,12 +143,20 @@ const ExperienceSection = () => {
         Experience
       </h2>
 
-      <div className="flex flex-col md:flex-row gap-10">
-        <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0">
+      <motion.div
+        className="flex flex-col md:flex-row gap-10"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0" variants={buttonVariants}>
           <div className="relative flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible scrollbar-thin scrollbar-thumb-highlight scrollbar-track-navy-light">
             {jobs.map((job, index) => (
-              <button
+              <motion.button
                 key={index}
+                variants={buttonVariants}
+                whileHover={{ scale: 1.02 }}
                 onClick={() => setActiveJobIndex(index)}
                 className={cn(
                   "px-4 py-3 text-left border-b-2 md:border-b-0 md:border-l-2 text-sm font-medium min-w-[200px]",
@@ -141,7 +166,7 @@ const ExperienceSection = () => {
                 )}
               >
                 {job.company}
-              </button>
+              </motion.button>
             ))}
             <div 
               className="hidden md:block absolute h-[2px] md:w-[2px] md:h-[calc(100%/6)] bg-highlight transition-all duration-300"
@@ -151,36 +176,45 @@ const ExperienceSection = () => {
               }}
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="md:w-2/3 lg:w-3/4">
-          <h3 className="text-xl font-bold text-foreground mb-1">
-            {activeJob.title} <span className="text-highlight">@ {activeJob.company}</span>
-          </h3>
-          
-          <p className="text-slate-light mb-4">{activeJob.duration} | {activeJob.location}</p>
-          
-          <ul className="mb-6 space-y-4">
-            {activeJob.description.map((point, index) => (
-              <li key={index} className="flex">
-                <span className="text-highlight mr-2 mt-1 flex-shrink-0">▹</span>
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="flex flex-wrap gap-2">
-            {activeJob.tech.map((tech) => (
-              <span 
-                key={tech} 
-                className="bg-navy-light text-slate-light text-sm px-3 py-1 rounded-full"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={activeJobIndex}
+            className="md:w-2/3 lg:w-3/4"
+            variants={activeDetailsVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <h3 className="text-xl font-bold text-foreground mb-1">
+              {activeJob.title} <span className="text-highlight">@ {activeJob.company}</span>
+            </h3>
+            
+            <p className="text-slate-light mb-4">{activeJob.duration} | {activeJob.location}</p>
+            
+            <ul className="mb-6 space-y-4">
+              {activeJob.description.map((point, index) => (
+                <li key={index} className="flex">
+                  <span className="text-highlight mr-2 mt-1 flex-shrink-0">▹</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div className="flex flex-wrap gap-2">
+              {activeJob.tech.map((tech) => (
+                <span 
+                  key={tech} 
+                  className="bg-navy-light text-slate-light text-sm px-3 py-1 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
     </PageTransition>
   );
 };

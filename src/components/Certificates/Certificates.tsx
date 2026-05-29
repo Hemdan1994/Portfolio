@@ -1,9 +1,20 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import PageTransition from '@/components/Layout/PageTransition';
 import { Card, CardContent } from '@/components/ui/card';
 import hackathonPDF from "@/assets/certificates/hackathon.pdf";
 import certificateUiPDF from "@/assets/certificates/certificate-ui.pdf";
 import topTechPDF from "@/assets/certificates/top-tech.pdf";
+
+const certificateGridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } }
+};
+
+const certificateCardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } }
+};
 
 interface Certificate {
   title: string;
@@ -42,9 +53,14 @@ const certificates: Certificate[] = [
 
 const CertificateCard = ({ certificate }: { certificate: Certificate }) => {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border/40 h-full">
-      <CardContent className="pt-6">
-        <div className="flex flex-col h-full">
+    <motion.div
+      variants={certificateCardVariants}
+      whileHover={{ y: -6, scale: 1.02 }}
+      className="group h-full"
+    >
+      <Card className="hover:shadow-lg transition-all duration-300 border-border/40 h-full">
+        <CardContent className="pt-6">
+          <div className="flex flex-col h-full">
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-lg bg-highlight/10 flex items-center justify-center flex-shrink-0">
@@ -81,6 +97,7 @@ const CertificateCard = ({ certificate }: { certificate: Certificate }) => {
         </div>
       </CardContent>
     </Card>
+  </motion.div>
   );
 };
 

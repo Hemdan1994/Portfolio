@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import PageTransition from '../Layout/PageTransition';
 import { Send } from 'lucide-react';
 
@@ -35,7 +36,13 @@ const ContactSection = () => {
 
   return (
     <PageTransition className="section-container">
-      <div className="max-w-2xl mx-auto text-center">
+      <motion.div
+        className="max-w-2xl mx-auto text-center"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <h2 className="section-title !text-center mx-auto after:mx-auto">
           <span className="text-highlight mr-2">06.</span>
           Contact
@@ -47,12 +54,22 @@ const ContactSection = () => {
         </p>
 
         {submitStatus === 'success' ? (
-          <div className="bg-highlight/10 border border-highlight text-highlight p-6 rounded-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-highlight/10 border border-highlight text-highlight p-6 rounded-lg"
+          >
             <h3 className="text-xl font-bold mb-2">Thank you for your message!</h3>
             <p>I'll get back to you as soon as possible.</p>
-          </div>
+          </motion.div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6 text-left">
+          <motion.form
+            onSubmit={handleSubmit}
+            className="space-y-6 text-left"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.1 }}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm font-medium text-slate-light">
@@ -121,9 +138,9 @@ const ContactSection = () => {
                 )}
               </button>
             </div>
-          </form>
+          </motion.form>
         )}
-      </div>
+      </motion.div>
     </PageTransition>
   );
 };

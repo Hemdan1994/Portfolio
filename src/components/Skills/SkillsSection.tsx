@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import PageTransition from '../Layout/PageTransition';
 import { cn } from '@/lib/utils';
 import { Progress } from '@/components/ui/progress';
@@ -23,6 +24,16 @@ import {
   Figma as FigmaIcon,
   TestTube
 } from 'lucide-react';
+
+const skillGridVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } }
+};
+
+const skillCardVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } }
+};
 
 interface Skill {
   name: string;
@@ -72,23 +83,29 @@ const CategoryIcon = ({ category }: { category: string }) => {
 
 const SkillCard = ({ skill }: { skill: Skill }) => {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-border/40">
-      <CardContent className="pt-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
-            {skill.icon}
-            <h3 className="font-semibold text-lg text-foreground">{skill.name}</h3>
+    <motion.div
+      variants={skillCardVariants}
+      whileHover={{ y: -6, scale: 1.02 }}
+      className="group"
+    >
+      <Card className="hover:shadow-lg transition-all duration-300 border-border/40">
+        <CardContent className="pt-6">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              {skill.icon}
+              <h3 className="font-semibold text-lg text-foreground">{skill.name}</h3>
+            </div>
+            <span className="text-sm font-medium text-muted-foreground">
+              {skill.level}%
+            </span>
           </div>
-          <span className="text-sm font-medium text-muted-foreground">
-            {skill.level}%
-          </span>
-        </div>
-        <Progress 
-          value={skill.level} 
-          className="h-2 bg-secondary"
-        />
-      </CardContent>
-    </Card>
+          <Progress 
+            value={skill.level} 
+            className="h-2 bg-secondary"
+          />
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 };
 
@@ -132,11 +149,17 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          variants={skillGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {filteredSkills.map((skill) => (
             <SkillCard key={skill.name} skill={skill} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </PageTransition>
   );
