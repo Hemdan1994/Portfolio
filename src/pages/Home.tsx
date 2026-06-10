@@ -13,10 +13,10 @@ const Home = () => {
     <div className="min-h-screen">
       <Hero />
       <AboutSection />
-      <SkillsSection />
       <CertificateSection/>
       <ExperienceSection />
       <ProjectsSection />
+      <SkillsSection />
       <ContactSection />
     </div>
   );
