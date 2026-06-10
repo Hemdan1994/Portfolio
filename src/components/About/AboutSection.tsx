@@ -32,7 +32,7 @@ const AboutSection = () => {
           </p>
           
           <ul className="grid grid-cols-2 gap-2 mb-8">
-            {['JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js', 'UI/UX ', 'TailwindCSS' , 'SEO' , 'Agile'].map((tech) => (
+            {['JavaScript (ES6+)' ,'TypeScript', 'React', 'Next.js', 'UI/UX ', 'TailwindCSS' , 'SEO' , 'Agile' , 'Umbraco' , 'Git' ].map((tech) => (
               <li key={tech} className="flex items-start">
                 <span className="text-highlight mr-2">▹</span>
                 {tech}
