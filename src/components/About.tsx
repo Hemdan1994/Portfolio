@@ -89,12 +89,12 @@ export function About() {
             </h1>
             <p className="max-w-xl text-lg leading-relaxed lg:text-xl">{profile.summary[0]}</p>
           </div>
-          <div className="aspect-[16/11] overflow-hidden">
+          <div className="mx-auto aspect-[2/3] w-full max-w-md overflow-hidden lg:max-w-lg">
             <img
               src={profile.photo}
               alt={profile.name}
               loading="lazy"
-              className="zoom-out-image size-full scale-125 object-cover object-[50%_20%] grayscale"
+              className="zoom-out-image size-full scale-125 object-cover object-center grayscale"
             />
           </div>
         </div>

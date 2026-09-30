@@ -1,4 +1,4 @@
-import personal from '../assets/images/personal.jpg'
+import personal from '../assets/images/hemdan.webp'
 import aybank from '../assets/images/aybank.jpeg'
 import tapking from '../assets/images/tapking.jpeg'
 import mileo from '../assets/images/mileo.jpeg'
