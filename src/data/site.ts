@@ -1,4 +1,5 @@
 import personal from '../assets/images/hemdan.webp'
+import portrait from '../assets/images/hemdan-personal.webp'
 import aybank from '../assets/images/aybank.jpeg'
 import tapking from '../assets/images/tapking.jpeg'
 import mileo from '../assets/images/mileo.jpeg'
@@ -37,6 +38,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/mohamedhemdan/',
   resume: './Mohamed-Hemdan-Resume.pdf',
   photo: personal,
+  heroPhoto: portrait,
   logo,
   headline:
     'I turn complex product ideas into fast, pixel-perfect web experiences that users — and search engines — love.',
