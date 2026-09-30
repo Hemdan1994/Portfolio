@@ -73,7 +73,7 @@ export function Services() {
               src={service.image}
               alt=""
               loading="lazy"
-              className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[320px] max-w-[80%] -translate-x-1/2 -translate-y-1/2 origin-top scale-y-[1.15] rounded-lg opacity-0 grayscale transition-all duration-1000 group-hover:scale-y-100 group-hover:opacity-100 sm:w-[440px] xl:w-[560px]"
+              className="pointer-events-none absolute top-1/2 left-1/2 h-auto w-[320px] max-w-[80%] -translate-x-1/2 -translate-y-1/2 origin-top scale-y-[1.15] rounded-lg opacity-0 grayscale transition-all duration-1000 group-hover:scale-y-100 group-hover:opacity-100 max-lg:scale-y-100 max-lg:opacity-60 sm:w-[440px] xl:w-[560px]"
             />
 
             <div className="relative z-10 space-y-4 text-white mix-blend-difference">

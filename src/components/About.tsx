@@ -75,9 +75,9 @@ export function About() {
   )
 
   return (
-    <section id="about" ref={root} className="py-32 lg:py-48">
-      <div className="container-x space-y-32 lg:space-y-48">
-        <div className="grid items-end gap-16 lg:grid-cols-2 lg:gap-32">
+    <section id="about" ref={root} className="py-12 lg:py-48">
+      <div className="container-x space-y-20 lg:space-y-48">
+        <div className="grid items-end gap-10 lg:grid-cols-2 lg:gap-32">
           <div className="space-y-8">
             <Label>About</Label>
             <h1 className="text-[clamp(90px,12vw,12vw)] leading-[clamp(80px,9vw,9vw)] font-semibold tracking-tight">
@@ -99,7 +99,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-32">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-32">
           <div>
             <h1 className={`lg:sticky lg:top-16 ${titleClass}`}>
               <span className="fill-text">
@@ -122,7 +122,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-32">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-32">
           <div>
             <h1 className={`lg:sticky lg:top-16 ${titleClass}`}>
               <span className="fill-text">
@@ -158,7 +158,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-32">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-32">
           <div>
             <h1 className={`lg:sticky lg:top-16 ${titleClass}`}>
               <span className="fill-text">
@@ -193,7 +193,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-32">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-32">
           <div>
             <div className="space-y-10 lg:sticky lg:top-20">
               <h1 className={titleClass}>

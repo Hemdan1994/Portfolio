@@ -56,7 +56,7 @@ export function Credentials() {
   const aiLoop = [...aiCases, ...aiCases, ...aiCases, ...aiCases]
 
   return (
-    <section id="credentials" className="overflow-hidden py-32 lg:py-48">
+    <section id="credentials" className="overflow-hidden py-12 lg:py-48">
       <div className="container-x mb-20 flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
         <div className="space-y-8">
           <Label>Certificates & AI</Label>

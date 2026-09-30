@@ -145,7 +145,7 @@ export function Hero() {
       </div>
 
       <div className="relative">
-        <div className="sticky top-0 z-[2] bg-(--bg-secondary) py-16">
+        <div className="sticky top-0 z-[2] bg-(--bg-secondary) py-10 lg:py-16">
           <div className="fade-in absolute -top-20 left-1/2 z-10 flex w-max -translate-x-1/2 items-center gap-4 bg-black p-2 pr-5">
             <div className="flex">
               {badgeFaces.map((src, i) => (
@@ -181,8 +181,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative z-20 bg-(--bg-secondary) pb-48">
-          <div className="container-x space-y-16 pt-16">
+        <div className="relative z-20 bg-(--bg-secondary) pb-16 lg:pb-48">
+          <div className="container-x space-y-10 pt-10 lg:space-y-16 lg:pt-16">
             <Separator />
             <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
               <p className="font-secondary text-xl text-(--text-primary) lg:w-140 lg:text-2xl">
@@ -201,7 +201,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mosaic-wrap mt-16 overflow-hidden border-y border-(--border) bg-black lg:aspect-[1.5/1]">
+          <div className="mosaic-wrap mt-10 overflow-hidden lg:mt-16 border-y border-(--border) bg-black lg:aspect-[1.5/1]">
             <div className="mosaic-grid grid grid-cols-3 gap-2 p-2 lg:gap-4 lg:p-4">
               {mosaic.map((col, ci) => (
                 <div key={ci} className={`flex flex-col gap-2 lg:gap-4 ${ci === 1 ? 'mosaic-mid' : ''}`}>

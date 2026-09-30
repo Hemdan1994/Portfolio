@@ -163,7 +163,7 @@ export function Work() {
   )
 
   return (
-    <section id="portfolio" ref={root} className="pt-32 lg:pt-48">
+    <section id="portfolio" ref={root} className="pt-12 lg:pt-48">
       <div className="container-x space-y-16">
         <Separator />
         <div className="grid items-end gap-12 lg:grid-cols-2">
@@ -194,7 +194,7 @@ export function Work() {
         </div>
       </div>
 
-      <div className="mt-24 lg:mt-32">
+      <div className="mt-12 lg:mt-32">
         {featuredWork.map((project, i) => {
           const num = String(i + 1).padStart(2, '0')
           return (

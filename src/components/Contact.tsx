@@ -23,7 +23,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="pt-32 pb-32 lg:pt-48">
+    <section id="contact" className="pt-12 pb-12 lg:pt-48 lg:pb-32">
       <div className="container-x">
         <Separator />
       </div>
@@ -43,7 +43,7 @@ export function Contact() {
         </div>
       </div>
 
-      <div className="container-x space-y-20 lg:space-y-24">
+      <div className="container-x space-y-12 lg:space-y-24">
         <h1 className="text-6xl leading-[0.95] font-medium normal-case sm:text-7xl lg:text-9xl 2xl:text-[10.75rem]">
           ✺ Interested in
           <br />
@@ -73,7 +73,7 @@ export function Contact() {
 
         <form onSubmit={submit} className="border-y border-(--border)">
           <div className="grid md:grid-cols-2">
-            <label className="block space-y-4 border-(--border) py-12 md:border-r md:py-16 md:pr-8">
+            <label className="block space-y-4 border-(--border) py-8 md:border-r md:py-16 md:pr-8">
               <h1 className="text-3xl">Your name *</h1>
               <input
                 required
@@ -83,7 +83,7 @@ export function Contact() {
                 className="w-full text-2xl"
               />
             </label>
-            <label className="block space-y-4 border-t border-(--border) py-12 md:border-t-0 md:py-16 md:pl-8">
+            <label className="block space-y-4 border-t border-(--border) py-8 md:border-t-0 md:py-16 md:pl-8">
               <h1 className="text-3xl">Your email *</h1>
               <input
                 required
@@ -96,7 +96,7 @@ export function Contact() {
             </label>
           </div>
           <div className="grid border-t border-(--border) lg:grid-cols-12">
-            <label className="block space-y-4 py-12 lg:col-span-9 lg:py-16 lg:pr-8">
+            <label className="block space-y-4 py-8 lg:col-span-9 lg:py-16 lg:pr-8">
               <h1 className="text-3xl">Your message *</h1>
               <textarea
                 required
