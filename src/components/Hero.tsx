@@ -119,7 +119,7 @@ export function Hero() {
           <img
             src={profile.heroPhoto}
             alt={profile.name}
-            className="fade-in size-full object-cover object-[50%_25%] grayscale contrast-110 lg:object-top"
+            className="fade-in size-full object-cover object-[50%_35%] grayscale contrast-110"
           />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/70 to-transparent" />
           <div className="absolute top-6 right-4 lg:hidden">
