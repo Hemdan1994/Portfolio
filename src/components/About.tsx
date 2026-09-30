@@ -94,7 +94,7 @@ export function About() {
               src={profile.photo}
               alt={profile.name}
               loading="lazy"
-              className="zoom-out-image size-full scale-125 object-cover object-center grayscale"
+              className="zoom-out-image size-full scale-125 object-cover object-center grayscale transition-[filter] duration-700 hover:grayscale-0"
             />
           </div>
         </div>
