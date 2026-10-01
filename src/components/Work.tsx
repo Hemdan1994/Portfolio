@@ -6,6 +6,7 @@ import { X } from 'lucide-react'
 import { featuredWork } from '../data/site'
 import { lockPageScroll, unlockPageScroll, scrollToTarget } from '../lib/scroll'
 import { ArrowSwap, Roll, Separator } from './ui'
+import { ResponsiveImage } from './ResponsiveImage'
 
 type Project = (typeof featuredWork)[number]
 
@@ -22,6 +23,11 @@ function ProjectDialog({
 }) {
   const open = project !== null
   const bodyRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    if (open) setMounted(true)
+  }, [open])
 
   useEffect(() => {
     if (project) bodyRef.current?.scrollTo({ top: 0 })
@@ -68,7 +74,7 @@ function ProjectDialog({
           open ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
-        {p && (
+        {mounted && p && (
           <div className="container-x space-y-16 py-28 lg:space-y-24 lg:py-32">
             <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
               <div className="space-y-4">
@@ -89,7 +95,13 @@ function ProjectDialog({
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-(--border) bg-black">
-              <img src={p.image} alt={p.title} width={1200} height={560} sizes="100vw" loading="lazy" decoding="async" className="block h-auto w-full" />
+              <ResponsiveImage
+                image={p.shot}
+                alt={p.title}
+                sizes="(min-width: 1024px) 1400px, 100vw"
+                frameClassName="block w-full"
+                className="block h-auto w-full"
+              />
             </div>
 
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -212,13 +224,11 @@ export function Work() {
             >
               <div className="relative -top-[100vh] h-[300vh]">
                 <div className="sticky top-0 h-screen overflow-hidden">
-                  <img
-                    src={project.cover}
+                  <ResponsiveImage
+                    image={project.shot}
                     alt=""
-                    width={800}
-                    height={500}
-                    loading="lazy"
-                    decoding="async"
+                    sizes="100vw"
+                    frameClassName="absolute inset-0 size-full"
                     className="parallax-image absolute inset-0 size-full scale-[1.08] object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-black/70 lg:bg-black/55 lg:backdrop-blur-md" />
@@ -230,14 +240,11 @@ export function Work() {
                         {project.title}
                       </h1>
                       <div className="w-80 overflow-hidden rounded-lg sm:w-[28rem] lg:w-[40rem]">
-                        <img
-                          src={project.image}
+                        <ResponsiveImage
+                          image={project.shot}
                           alt={project.title}
-                          width={1200}
-                          height={560}
                           sizes="(max-width: 640px) 20rem, (max-width: 1024px) 28rem, 40rem"
-                          loading="lazy"
-                          decoding="async"
+                          frameClassName="block w-full"
                           className="block h-auto w-full"
                         />
                       </div>

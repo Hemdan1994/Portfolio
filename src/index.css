@@ -1,3 +1,4 @@
+@import "./fonts.css";
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -372,6 +373,11 @@
 footer {
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
+}
+
+.project-frame {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100vh;
 }
 
 @media (hover: none) {

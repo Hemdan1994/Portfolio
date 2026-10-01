@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { profile } from '../data/site'
 import { ArrowSwap, Roll, Separator } from './ui'
+import { ResponsiveImage } from './ResponsiveImage'
 
 const words = Array.from({ length: 6 }).flatMap(() => ["Let's talk", "Let's work"])
 
@@ -33,7 +34,7 @@ export function Contact() {
           {[...words, ...words].map((word, i) => (
             <h1
               key={i}
-              className={`scale-y-200 px-[2vw] text-[clamp(90px,13vw,13vw)] leading-none font-black ${
+              className={`scale-y-200 px-[2vw] text-[clamp(90px,13vw,13vw)] leading-none font-bold ${
                 i % 2 ? 'outlined-text' : ''
               }`}
             >
@@ -49,7 +50,13 @@ export function Contact() {
           <br />
           working with{' '}
           <span className="inline-block h-[0.75em] overflow-hidden rounded-full align-middle">
-            <img src={profile.photo} alt="" loading="lazy" decoding="async" className="aspect-video h-full origin-[40%_0%] scale-[2.4] object-cover object-[50%_20%] grayscale" />
+            <ResponsiveImage
+              image={profile.photo}
+              alt=""
+              sizes="240px"
+              frameClassName="block h-full"
+              className="aspect-video h-full origin-[40%_0%] scale-[2.4] object-cover object-[50%_20%] grayscale"
+            />
           </span>{' '}
           ?
         </h1>

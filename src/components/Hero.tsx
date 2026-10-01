@@ -1,10 +1,10 @@
-import { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
+import { useEffect, useRef } from 'react'
 import { ArrowDown, Star as StarIcon } from 'lucide-react'
 import { badgeFaces, heroStats, mosaic, profile } from '../data/site'
+import { loadMotion } from '../lib/motion'
 import { scrollToTarget } from '../lib/scroll'
 import { FitName } from './FitName'
+import { ResponsiveImage } from './ResponsiveImage'
 import { ArrowSwap, Roll, Separator } from './ui'
 
 const socials = [
@@ -43,31 +43,48 @@ function HireBadge() {
 export function Hero() {
   const root = useRef<HTMLElement>(null)
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia()
-      gsap.to('.hero-wrapper', {
-        y: 300,
-        ease: 'none',
-        scrollTrigger: { trigger: '.hero-wrapper', start: 'top top', scrub: true },
-      })
+  useEffect(() => {
+    let ctx: { revert: () => void } | undefined
+    let cancelled = false
 
-      gsap.fromTo(
-        '.mosaic-grid',
-        { scale: 1.5 },
-        { scale: 1, ease: 'power1.inOut', scrollTrigger: { trigger: '.mosaic-wrap', scrub: 1.5 } },
-      )
+    const start = () => {
+      loadMotion().then(({ gsap }) => {
+        if (cancelled || !root.current) return
+        ctx = gsap.context(() => {
+          const mm = gsap.matchMedia()
+          gsap.to('.hero-wrapper', {
+            y: 300,
+            ease: 'none',
+            scrollTrigger: { trigger: '.hero-wrapper', start: 'top top', scrub: true },
+          })
 
-      mm.add({ desktop: '(min-width: 1024px)', mobile: '(max-width: 1023px)' }, (ctx) => {
-        gsap.to('.mosaic-mid', {
-          y: ctx.conditions?.desktop ? 192 : 32,
-          ease: 'none',
-          scrollTrigger: { trigger: '.mosaic-wrap', scrub: 1.5 },
-        })
+          gsap.fromTo(
+            '.mosaic-grid',
+            { scale: 1.5 },
+            { scale: 1, ease: 'power1.inOut', scrollTrigger: { trigger: '.mosaic-wrap', scrub: 1.5 } },
+          )
+
+          mm.add({ desktop: '(min-width: 1024px)', mobile: '(max-width: 1023px)' }, (context) => {
+            gsap.to('.mosaic-mid', {
+              y: context.conditions?.desktop ? 192 : 32,
+              ease: 'none',
+              scrollTrigger: { trigger: '.mosaic-wrap', scrub: 1.5 },
+            })
+          })
+        }, root)
       })
-    },
-    { scope: root },
-  )
+    }
+
+    const idle = typeof requestIdleCallback === 'function' ? requestIdleCallback(start, { timeout: 1200 }) : undefined
+    const timer = idle === undefined ? window.setTimeout(start, 200) : undefined
+
+    return () => {
+      cancelled = true
+      if (idle !== undefined) cancelIdleCallback(idle)
+      if (timer !== undefined) window.clearTimeout(timer)
+      ctx?.revert()
+    }
+  }, [])
 
   return (
     <section id="home" ref={root} className="!min-h-0">
@@ -116,15 +133,13 @@ export function Hero() {
           <HireBadge />
         </div>
         <div className="relative overflow-hidden lg:col-span-6">
-            <img
-              src={profile.heroPhoto}
+            <ResponsiveImage
+              image={profile.heroPhoto}
               alt={profile.name}
-              width={800}
-              height={1312}
               sizes="(max-width: 1023px) 100vw, 50vw"
-              fetchPriority="high"
-              decoding="async"
-              className="fade-in size-full object-cover object-[50%_35%] grayscale contrast-110"
+              priority
+              frameClassName="block h-full w-full"
+              className="fade-in size-full object-cover object-[50%_35%] contrast-110"
             />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/70 to-transparent" />
           <div className="absolute top-6 right-4 lg:hidden">
@@ -154,14 +169,13 @@ export function Hero() {
           <div className="fade-in absolute -top-20 left-1/2 z-10 flex w-max -translate-x-1/2 items-center gap-4 bg-black p-2 pr-5">
             <div className="flex">
               {badgeFaces.map((src, i) => (
-                <img
+                <ResponsiveImage
                   key={i}
-                  src={src}
+                  image={src}
                   alt=""
-                  width={44}
-                  height={44}
-                  decoding="async"
-                  className="size-11 rounded-full border-2 border-black object-cover"
+                  sizes="44px"
+                  frameClassName="inline-block size-11 rounded-full border-2 border-black"
+                  className="size-full rounded-full object-cover"
                   style={{ marginLeft: i ? -14 : 0 }}
                 />
               ))}
@@ -214,15 +228,12 @@ export function Hero() {
               {mosaic.map((col, ci) => (
                 <div key={ci} className={`flex flex-col gap-2 lg:gap-4 ${ci === 1 ? 'mosaic-mid' : ''}`}>
                   {col.map((src, i) => (
-                    <img
+                    <ResponsiveImage
                       key={i}
-                      src={src}
+                      image={src}
                       alt=""
-                      width={800}
-                      height={600}
-                      sizes="33vw"
-                      loading="lazy"
-                      decoding="async"
+                      sizes="(max-width: 1024px) 33vw, 30vw"
+                      frameClassName="block w-full"
                       className="aspect-[16/12] w-full rounded-xl object-cover object-top"
                     />
                   ))}

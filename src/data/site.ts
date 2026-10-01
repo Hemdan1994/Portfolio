@@ -1,30 +1,21 @@
-import personal from '../assets/images/hemdan.webp?hq'
-import portrait from '../assets/images/hemdan-personal.jpeg?hero'
-import aybankTile from '../assets/images/aybank.jpeg?tile'
-import tapkingTile from '../assets/images/tapking.jpeg?tile'
-import mileoTile from '../assets/images/mileo.jpeg?tile'
-import milayaTile from '../assets/images/milaya.jpeg?tile'
-import drjobsTile from '../assets/images/dr.jpeg?tile'
-import diwanTile from '../assets/images/diwan.jpg?tile'
-import cvshotsTile from '../assets/images/cvshots.jpeg?tile'
-import ehaTile from '../assets/images/eha.jpeg?tile'
-import oliveTile from '../assets/images/olive.jpg?tile'
-import smartjobsTile from '../assets/images/smartjobs.jpeg?tile'
-import aybankCard from '../assets/images/aybank.jpeg?card'
-import tapkingCard from '../assets/images/tapking.jpeg?card'
-import mileoCard from '../assets/images/mileo.jpeg?card'
-import milayaCard from '../assets/images/milaya.jpeg?card'
-import drjobsCard from '../assets/images/dr.jpeg?card'
-import diwanCard from '../assets/images/diwan.jpg?card'
-import cvshotsCard from '../assets/images/cvshots.jpeg?card'
-import ehaCard from '../assets/images/eha.jpeg?card'
-import oliveCard from '../assets/images/olive.jpg?card'
-import toutongiCard from '../assets/images/toutongi.jpeg?card'
-import alfaCard from '../assets/images/alfa.jpeg?card'
-import aybankThumb from '../assets/images/aybank.jpeg?thumb'
-import mileoThumb from '../assets/images/mileo.jpeg?thumb'
-import freeladyThumb from '../assets/images/freelady.jpeg?thumb'
-import monairyThumb from '../assets/images/monairy.jpg?thumb'
+import personal from '../assets/images/hemdan.webp?w=240;480;800&format=avif;webp&as=picture'
+import portrait from '../assets/images/hemdan-personal.jpeg?w=400;800&format=avif;webp&quality=78&grayscale&as=picture'
+import aybank from '../assets/images/aybank.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import tapking from '../assets/images/tapking.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import mileo from '../assets/images/mileo.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import milaya from '../assets/images/milaya.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import drjobs from '../assets/images/dr.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import diwan from '../assets/images/diwan.jpg?w=400;800;1280&format=avif;webp&as=picture'
+import cvshots from '../assets/images/cvshots.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import eha from '../assets/images/eha.jpeg?w=400;800;1400&format=avif;webp&as=picture'
+import olive from '../assets/images/olive.jpg?w=400;800;1280&format=avif;webp&as=picture'
+import smartjobs from '../assets/images/smartjobs.jpeg?w=400;800&format=avif;webp&as=picture'
+import toutongi from '../assets/images/toutongi.jpeg?w=400;800;1120&format=avif;webp&as=picture'
+import alfa from '../assets/images/alfa.jpeg?w=400;800;1120&format=avif;webp&as=picture'
+import aybankThumb from '../assets/images/aybank.jpeg?w=128&format=avif;webp&quality=60&as=picture'
+import mileoThumb from '../assets/images/mileo.jpeg?w=128&format=avif;webp&quality=60&as=picture'
+import freeladyThumb from '../assets/images/freelady.jpeg?w=128&format=avif;webp&quality=60&as=picture'
+import monairyThumb from '../assets/images/monairy.jpg?w=128&format=avif;webp&quality=60&as=picture'
 import hackathonPdf from '../assets/certificates/hackathon.pdf'
 import uiPdf from '../assets/certificates/certificate-ui.pdf'
 import topTechPdf from '../assets/certificates/top-tech.pdf'
@@ -120,9 +111,9 @@ export const heroStats = [
 ]
 
 export const mosaic = [
-  [aybankTile, tapkingTile, mileoTile],
-  [milayaTile, drjobsTile, diwanTile],
-  [cvshotsTile, ehaTile, smartjobsTile],
+  [aybank, tapking, mileo],
+  [milaya, drjobs, diwan],
+  [cvshots, eha, smartjobs],
 ]
 
 export const howIWork = [
@@ -169,8 +160,7 @@ export const experience = [
 export const featuredWork = [
   {
     title: 'Aybank',
-    image: aybankCard,
-    cover: aybankTile,
+    shot: aybank,
     tags: ['Banking', 'Next.js', 'Umbraco'],
     link: 'https://aybank.com',
     about:
@@ -179,8 +169,7 @@ export const featuredWork = [
   },
   {
     title: 'Tapking',
-    image: tapkingCard,
-    cover: tapkingTile,
+    shot: tapking,
     tags: ['Platform', 'Next.js', 'Redux'],
     link: 'https://tapking.com',
     about:
@@ -189,8 +178,7 @@ export const featuredWork = [
   },
   {
     title: 'Mileo Hotels',
-    image: mileoCard,
-    cover: mileoTile,
+    shot: mileo,
     tags: ['Hospitality', 'Booking', 'GSAP'],
     link: 'https://mileohotels.com',
     about:
@@ -199,8 +187,7 @@ export const featuredWork = [
   },
   {
     title: 'Milaya Properties',
-    image: milayaCard,
-    cover: milayaTile,
+    shot: milaya,
     tags: ['Real Estate', 'Dubai', 'Filters'],
     link: 'https://milayaproperties.com',
     about:
@@ -209,8 +196,7 @@ export const featuredWork = [
   },
   {
     title: 'DrJobs',
-    image: drjobsCard,
-    cover: drjobsTile,
+    shot: drjobs,
     tags: ['Hiring', 'ATS', 'React'],
     link: 'https://drjobs.ae',
     about:
@@ -219,8 +205,7 @@ export const featuredWork = [
   },
   {
     title: 'Diwan Reader',
-    image: diwanCard,
-    cover: diwanTile,
+    shot: diwan,
     tags: ['Gov', 'Education', 'E-Books'],
     link: '',
     about:
@@ -229,8 +214,7 @@ export const featuredWork = [
   },
   {
     title: 'CV Shots',
-    image: cvshotsCard,
-    cover: cvshotsTile,
+    shot: cvshots,
     tags: ['Video CV', 'Hiring', 'UI'],
     link: '',
     about:
@@ -239,8 +223,7 @@ export const featuredWork = [
   },
   {
     title: 'Print Persona',
-    image: oliveCard,
-    cover: oliveTile,
+    shot: olive,
     tags: ['E-Commerce', 'Magento 2', 'Custom'],
     link: 'https://www.printpersona.com',
     about:
@@ -249,8 +232,7 @@ export const featuredWork = [
   },
   {
     title: 'Egyptian Hotels',
-    image: ehaCard,
-    cover: ehaTile,
+    shot: eha,
     tags: ['Association', 'Hospitality', 'Web'],
     link: 'http://www.egyptianhotels.org/',
     about:
@@ -263,32 +245,32 @@ export const serviceCards = [
   {
     title: 'Pixel-Perfect UI',
     copy: 'Figma and Adobe XD turned into production-ready, accessible components with obsessive spacing, typography, and responsive behavior across every screen size.',
-    image: milayaCard,
+    image: milaya,
   },
   {
     title: 'Next.js Development',
     copy: 'SSR, SSG, and ISR apps with multilingual routing, dynamic pages, and CMS delivery APIs such as Umbraco, built to scale from landing pages to full platforms.',
-    image: aybankCard,
+    image: aybank,
   },
   {
     title: 'Performance & SEO',
     copy: 'Core Web Vitals, meta strategy, caching, and PageSpeed work that holds up in banking, government, and hospitality products with real traffic.',
-    image: mileoCard,
+    image: mileo,
   },
   {
     title: 'Motion & Interaction',
     copy: 'GSAP and Framer Motion used with intent, from scroll-driven storytelling to micro-interactions, so interfaces feel premium without hurting speed.',
-    image: toutongiCard,
+    image: toutongi,
   },
   {
     title: 'Dashboards & APIs',
     copy: 'REST and GraphQL wired into dashboards with Redux, React Query, and clean state, so data-heavy products stay fast, readable, and easy to maintain.',
-    image: tapkingCard,
+    image: tapking,
   },
   {
     title: 'AI-Assisted Delivery',
     copy: 'Structured prompt systems for Figma-to-code, refactors, and review with Cursor, Copilot, and ChatGPT: faster shipping at the same senior quality bar.',
-    image: alfaCard,
+    image: alfa,
   },
 ]
 

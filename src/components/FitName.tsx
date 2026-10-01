@@ -1,44 +1,24 @@
-import { useLayoutEffect, useRef } from 'react'
-
-/** Renders one line of display text sized so it spans its own full width. */
+/** Full-bleed name. `textLength` stretches the glyphs, so nothing measures the DOM on load. */
 export function FitName({ text, className, animate = true }: { text: string; className?: string; animate?: boolean }) {
-  const ref = useRef<HTMLHeadingElement>(null)
-
-  useLayoutEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const fit = () => {
-      const probe = document.createElement('span')
-      const styles = getComputedStyle(el)
-      probe.textContent = text
-      Object.assign(probe.style, {
-        position: 'absolute',
-        visibility: 'hidden',
-        whiteSpace: 'nowrap',
-        fontFamily: styles.fontFamily,
-        fontWeight: styles.fontWeight,
-        letterSpacing: styles.letterSpacing,
-        textTransform: 'uppercase',
-        fontSize: '100px',
-      })
-      document.body.appendChild(probe)
-      const width = probe.getBoundingClientRect().width
-      probe.remove()
-      if (!width) return
-      const px = (el.clientWidth / width) * 100 * 0.985
-      const vw = (px / window.innerWidth) * 100
-      el.style.fontSize = `${vw}vw`
-      el.style.lineHeight = `${vw}vw`
-    }
-    fit()
-    document.fonts?.ready.then(fit)
-    window.addEventListener('resize', fit)
-    return () => window.removeEventListener('resize', fit)
-  }, [text])
-
   return (
-    <h1 ref={ref} className={`overflow-hidden text-center font-extrabold text-nowrap ${className ?? ''}`}>
-      <span className={`block ${animate ? 'slide-up' : ''}`}>{text}</span>
+    <h1 className={`overflow-hidden text-center ${className ?? ''}`}>
+      <span className={`block ${animate ? 'slide-up' : ''}`}>
+        <svg viewBox="0 0 1000 150" className="block h-auto w-full" role="img" aria-label={text}>
+          <text
+            x="500"
+            y="132"
+            textAnchor="middle"
+            fill="currentColor"
+            fontFamily="Saira Condensed, Arial Narrow, sans-serif"
+            fontWeight="700"
+            fontSize="148"
+            textLength="980"
+            lengthAdjust="spacingAndGlyphs"
+          >
+            {text.toUpperCase()}
+          </text>
+        </svg>
+      </span>
     </h1>
   )
 }

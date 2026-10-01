@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Lenis from 'lenis'
 import { setLenis } from '../lib/scroll'
+import { loadMotion } from '../lib/motion'
 
 export function SmoothScroll() {
   useEffect(() => {
@@ -10,23 +8,37 @@ export function SmoothScroll() {
     const coarse = window.matchMedia('(pointer: coarse)').matches
     if (reduced || coarse) return
 
-    const lenis = new Lenis({ duration: 1.2, touchMultiplier: 1.1, autoRaf: false })
-    setLenis(lenis)
+    let cancelled = false
+    let cleanup = () => {}
 
-    lenis.on('scroll', ScrollTrigger.update)
-
-    const ticker = (time: number) => {
-      lenis.raf(time * 1000)
+    const start = () => {
+      Promise.all([import('lenis'), loadMotion()]).then(([lenisMod, { gsap, ScrollTrigger }]) => {
+        if (cancelled) return
+        const lenis = new lenisMod.default({ duration: 1.2, touchMultiplier: 1.1, autoRaf: false })
+        setLenis(lenis)
+        lenis.on('scroll', ScrollTrigger.update)
+        const ticker = (time: number) => {
+          lenis.raf(time * 1000)
+        }
+        gsap.ticker.add(ticker)
+        gsap.ticker.lagSmoothing(0)
+        cleanup = () => {
+          gsap.ticker.remove(ticker)
+          gsap.ticker.lagSmoothing(500, 33)
+          lenis.destroy()
+          setLenis(null)
+        }
+      })
     }
 
-    gsap.ticker.add(ticker)
-    gsap.ticker.lagSmoothing(0)
+    const idle = typeof requestIdleCallback === 'function' ? requestIdleCallback(start, { timeout: 1200 }) : undefined
+    const timer = idle === undefined ? window.setTimeout(start, 200) : undefined
 
     return () => {
-      gsap.ticker.remove(ticker)
-      gsap.ticker.lagSmoothing(500, 33)
-      lenis.destroy()
-      setLenis(null)
+      cancelled = true
+      if (idle !== undefined) cancelIdleCallback(idle)
+      if (timer !== undefined) window.clearTimeout(timer)
+      cleanup()
     }
   }, [])
 

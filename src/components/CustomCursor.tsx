@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import gsap from 'gsap'
+import { loadMotion } from '../lib/motion'
 
 export function CustomCursor() {
   const ref = useRef<HTMLDivElement>(null)
@@ -8,26 +8,47 @@ export function CustomCursor() {
   useEffect(() => {
     const el = ref.current
     if (!el || window.matchMedia('(hover: none)').matches) return
-    gsap.set(el, { xPercent: -50, yPercent: -50 })
-    const x = gsap.quickTo(el, 'x', { duration: 0.35, ease: 'power3.out' })
-    const y = gsap.quickTo(el, 'y', { duration: 0.35, ease: 'power3.out' })
 
-    const move = (e: PointerEvent) => {
-      x(e.clientX)
-      y(e.clientY)
-      el.style.opacity = '1'
-      const target = e.target as HTMLElement | null
-      setView(Boolean(target?.closest('[data-cursor="view"]')))
-    }
-    const leave = () => {
-      el.style.opacity = '0'
+    let cancelled = false
+    let cleanup = () => {}
+
+    const start = () => {
+      loadMotion().then(({ gsap }) => {
+        if (cancelled || !ref.current) return
+        const node = ref.current
+        gsap.set(node, { xPercent: -50, yPercent: -50 })
+        const x = gsap.quickTo(node, 'x', { duration: 0.35, ease: 'power3.out' })
+        const y = gsap.quickTo(node, 'y', { duration: 0.35, ease: 'power3.out' })
+
+        const move = (e: PointerEvent) => {
+          x(e.clientX)
+          y(e.clientY)
+          node.style.opacity = '1'
+          const target = e.target as HTMLElement | null
+          const next = Boolean(target?.closest('[data-cursor="view"]'))
+          setView((prev) => (prev === next ? prev : next))
+        }
+        const leave = () => {
+          node.style.opacity = '0'
+        }
+
+        window.addEventListener('pointermove', move)
+        document.documentElement.addEventListener('pointerleave', leave)
+        cleanup = () => {
+          window.removeEventListener('pointermove', move)
+          document.documentElement.removeEventListener('pointerleave', leave)
+        }
+      })
     }
 
-    window.addEventListener('pointermove', move)
-    document.documentElement.addEventListener('pointerleave', leave)
+    const idle = typeof requestIdleCallback === 'function' ? requestIdleCallback(start, { timeout: 1200 }) : undefined
+    const timer = idle === undefined ? window.setTimeout(start, 200) : undefined
+
     return () => {
-      window.removeEventListener('pointermove', move)
-      document.documentElement.removeEventListener('pointerleave', leave)
+      cancelled = true
+      if (idle !== undefined) cancelIdleCallback(idle)
+      if (timer !== undefined) window.clearTimeout(timer)
+      cleanup()
     }
   }, [])
 

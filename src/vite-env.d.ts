@@ -5,27 +5,10 @@ declare module '*.pdf' {
   export default src
 }
 
-declare module '*?thumb' {
-  const src: string
-  export default src
-}
-
-declare module '*?tile' {
-  const src: string
-  export default src
-}
-
-declare module '*?hq' {
-  const src: string
-  export default src
-}
-
-declare module '*?hero' {
-  const src: string
-  export default src
-}
-
-declare module '*?card' {
-  const src: string
-  export default src
+declare module '*&as=picture' {
+  const picture: {
+    sources: Record<string, string>
+    img: { src: string; w: number; h: number }
+  }
+  export default picture
 }

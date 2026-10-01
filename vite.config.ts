@@ -2,13 +2,11 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { imagetools } from 'vite-imagetools'
+import sharp from 'sharp'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url))
-
-/** Size presets usable as `image.jpeg?thumb` / `image.jpeg?tile`; `?hq` raises quality. Everything else ships as full-size WebP. */
-const presets: Record<string, string> = { thumb: '120', tile: '720', card: '1100', hero: '960' }
 
 /** Lets the browser fetch the hero portrait in parallel with the JS bundle instead of after it. */
 function preloadHeroImage(): Plugin {
@@ -19,13 +17,34 @@ function preloadHeroImage(): Plugin {
     configResolved(config) {
       base = config.base
     },
-    transformIndexHtml(_html, ctx) {
-      const asset = Object.values(ctx.bundle ?? {}).find((file) => file.fileName.includes('hemdan-personal'))
-      if (!asset) return
+    async transformIndexHtml(_html, ctx) {
+      const assets = Object.values(ctx.bundle ?? {}).filter(
+        (file): file is Extract<(typeof file), { type: 'asset' }> =>
+          file.type === 'asset' && file.fileName.includes('hemdan-personal') && file.fileName.endsWith('.avif'),
+      )
+      if (!assets.length) return
+
+      const measured = await Promise.all(
+        assets.map(async (file) => {
+          const source = typeof file.source === 'string' ? Buffer.from(file.source) : Buffer.from(file.source)
+          const meta = await sharp(source).metadata()
+          return { href: `${base}${file.fileName}`, width: meta.width ?? 0 }
+        }),
+      )
+      measured.sort((a, b) => a.width - b.width)
+      const href = (measured.find((item) => item.width >= 800) ?? measured[measured.length - 1]).href
       return [
         {
           tag: 'link',
-          attrs: { rel: 'preload', as: 'image', href: `${base}${asset.fileName}`, fetchpriority: 'high' },
+          attrs: {
+            rel: 'preload',
+            as: 'image',
+            type: 'image/avif',
+            href,
+            imagesrcset: measured.map((item) => `${item.href} ${item.width}w`).join(', '),
+            imagesizes: '(max-width: 1023px) 100vw, 50vw',
+            fetchpriority: 'high',
+          },
           injectTo: 'head',
         },
       ]
@@ -42,11 +61,8 @@ export default defineConfig({
       include: /\.(jpe?g|png|webp)(\?.*)?$/,
       defaultDirectives: (url) => {
         const params = new URLSearchParams()
-        for (const [preset, width] of Object.entries(presets)) {
-          if (url.searchParams.has(preset)) params.set('w', width)
-        }
         if (!url.searchParams.has('format')) params.set('format', 'webp')
-        if (!url.searchParams.has('quality')) params.set('quality', url.searchParams.has('hq') || url.searchParams.has('hero') ? '82' : '70')
+        if (!url.searchParams.has('quality')) params.set('quality', '70')
         return params
       },
     }),
@@ -59,15 +75,10 @@ export default defineConfig({
   base: '/Portfolio/',
   build: {
     target: 'es2022',
-    modulePreload: { polyfill: false },
-    assetsInlineLimit: 1024,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules/gsap') || id.includes('node_modules/@gsap') || id.includes('node_modules/lenis')) {
-            return 'motion'
-          }
-        },
+    modulePreload: {
+      polyfill: false,
+      resolveDependencies(_filename, deps) {
+        return deps.filter((dep) => dep.includes('rolldown-runtime'))
       },
     },
   },

@@ -17,6 +17,7 @@ import {
 } from 'simple-icons'
 import { experience, howIWork, profile, skillBars, techStack } from '../data/site'
 import { ArrowSwap, Label, Roll } from './ui'
+import { ResponsiveImage } from './ResponsiveImage'
 
 const icons = {
   siAngular,
@@ -90,14 +91,11 @@ export function About() {
             <p className="max-w-xl text-lg leading-relaxed lg:text-xl">{profile.summary[0]}</p>
           </div>
           <div className="mx-auto aspect-[2/3] w-full max-w-md overflow-hidden lg:max-w-lg">
-            <img
-              src={profile.photo}
+            <ResponsiveImage
+              image={profile.photo}
               alt={profile.name}
-              width={800}
-              height={1200}
               sizes="(max-width: 1023px) 28rem, 32rem"
-              loading="lazy"
-              decoding="async"
+              frameClassName="block size-full"
               className="zoom-out-image size-full scale-125 object-cover object-center grayscale transition-[filter] duration-700 hover:grayscale-0"
             />
           </div>
