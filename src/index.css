@@ -49,6 +49,18 @@
     height: auto;
   }
 
+  html.modal-open,
+  html.modal-open body {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+  }
+
+  html.modal-open body {
+    position: fixed;
+    inset-inline: 0;
+    width: 100%;
+  }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }
@@ -103,7 +115,6 @@
   section {
     position: relative;
     z-index: 20;
-    min-height: 100vh;
     background: var(--bg-secondary);
   }
 }
@@ -354,6 +365,13 @@
 
 .no-scrollbar {
   scrollbar-width: none;
+}
+
+#credentials,
+#contact,
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 
 @media (hover: none) {

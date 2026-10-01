@@ -49,7 +49,7 @@ export function Contact() {
           <br />
           working with{' '}
           <span className="inline-block h-[0.75em] overflow-hidden rounded-full align-middle">
-            <img src={profile.photo} alt="" className="aspect-video h-full origin-[40%_0%] scale-[2.4] object-cover object-[50%_20%] grayscale" />
+            <img src={profile.photo} alt="" loading="lazy" decoding="async" className="aspect-video h-full origin-[40%_0%] scale-[2.4] object-cover object-[50%_20%] grayscale" />
           </span>{' '}
           ?
         </h1>

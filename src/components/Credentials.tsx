@@ -52,8 +52,8 @@ function AICard({ item, n }: { item: (typeof aiCases)[number]; n: number }) {
 }
 
 export function Credentials() {
-  const certLoop = [...certificates, ...certificates, ...certificates, ...certificates]
-  const aiLoop = [...aiCases, ...aiCases, ...aiCases, ...aiCases]
+  const certLoop = [...certificates, ...certificates]
+  const aiLoop = [...aiCases, ...aiCases]
 
   return (
     <section id="credentials" className="overflow-hidden py-12 lg:py-48">

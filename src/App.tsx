@@ -1,16 +1,33 @@
-import { About } from './components/About'
-import { Contact } from './components/Contact'
-import { Credentials } from './components/Credentials'
+import { useEffect, useState, type ComponentType } from 'react'
 import { CustomCursor } from './components/CustomCursor'
-import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Nav } from './components/Nav'
-import { ScrollFx } from './components/ScrollFx'
-import { Services } from './components/Services'
 import { SmoothScroll } from './components/SmoothScroll'
-import { Work } from './components/Work'
 
-function App() {
+export default function App() {
+  const [BelowFold, setBelowFold] = useState<ComponentType | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    const load = () => {
+      import('./BelowFold').then((mod) => {
+        if (!cancelled) setBelowFold(() => mod.BelowFold)
+      })
+    }
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(load, { timeout: 800 })
+      return () => {
+        cancelled = true
+        cancelIdleCallback(id)
+      }
+    }
+    const timer = window.setTimeout(load, 1)
+    return () => {
+      cancelled = true
+      window.clearTimeout(timer)
+    }
+  }, [])
+
   return (
     <>
       <SmoothScroll />
@@ -18,16 +35,8 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <About />
-        <Credentials />
-        <Work />
-        <Services />
-        <Contact />
+        {BelowFold ? <BelowFold /> : <div className="min-h-screen bg-(--bg-secondary)" aria-hidden="true" />}
       </main>
-      <Footer />
-      <ScrollFx />
     </>
   )
 }
-
-export default App

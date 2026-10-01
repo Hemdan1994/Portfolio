@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { X } from 'lucide-react'
 import { featuredWork } from '../data/site'
-import { getLenis, scrollToTarget } from '../lib/scroll'
+import { lockPageScroll, unlockPageScroll, scrollToTarget } from '../lib/scroll'
 import { ArrowSwap, Roll, Separator } from './ui'
 
 type Project = (typeof featuredWork)[number]
@@ -28,12 +28,14 @@ function ProjectDialog({
   }, [project])
 
   useEffect(() => {
-    const lenis = getLenis()
-    if (open) lenis?.stop()
-    else lenis?.start()
+    if (open) lockPageScroll()
+    else unlockPageScroll()
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
     if (open) window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      if (open) unlockPageScroll()
+    }
   }, [open, onClose])
 
   const p = featuredWork[index]
@@ -62,7 +64,7 @@ function ProjectDialog({
         role="dialog"
         aria-modal="true"
         data-lenis-prevent
-        className={`no-scrollbar fixed bottom-0 left-0 z-[50] size-full overflow-y-auto bg-(--bg-secondary) transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)] ${
+        className={`no-scrollbar fixed bottom-0 left-0 z-[50] size-full overflow-y-auto overscroll-contain bg-(--bg-secondary) transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)] ${
           open ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
@@ -87,7 +89,7 @@ function ProjectDialog({
             </div>
 
             <div className="overflow-hidden rounded-2xl border border-(--border) bg-black">
-              <img src={p.image} alt={p.title} className="block h-auto w-full" />
+              <img src={p.image} alt={p.title} width={1200} height={560} sizes="100vw" loading="lazy" decoding="async" className="block h-auto w-full" />
             </div>
 
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
@@ -211,12 +213,15 @@ export function Work() {
               <div className="relative -top-[100vh] h-[300vh]">
                 <div className="sticky top-0 h-screen overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.cover}
                     alt=""
+                    width={800}
+                    height={500}
                     loading="lazy"
+                    decoding="async"
                     className="parallax-image absolute inset-0 size-full scale-[1.08] object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-black/55 backdrop-blur-md" />
+                  <div className="absolute inset-0 bg-black/70 lg:bg-black/55 lg:backdrop-blur-md" />
                   <div className="relative flex h-full items-center justify-center px-4 text-white lg:justify-between lg:px-16">
                     <span className="hidden font-secondary text-5xl font-light lg:block">{num}</span>
                     <div className="flex flex-col items-center gap-8">
@@ -225,7 +230,16 @@ export function Work() {
                         {project.title}
                       </h1>
                       <div className="w-80 overflow-hidden rounded-lg sm:w-[28rem] lg:w-[40rem]">
-                        <img src={project.image} alt={project.title} loading="lazy" className="block h-auto w-full" />
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          width={1200}
+                          height={560}
+                          sizes="(max-width: 640px) 20rem, (max-width: 1024px) 28rem, 40rem"
+                          loading="lazy"
+                          decoding="async"
+                          className="block h-auto w-full"
+                        />
                       </div>
                       <div className="flex flex-wrap justify-center gap-2">
                         {project.tags.map((tag) => (

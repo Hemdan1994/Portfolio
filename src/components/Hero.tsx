@@ -116,11 +116,16 @@ export function Hero() {
           <HireBadge />
         </div>
         <div className="relative overflow-hidden lg:col-span-6">
-          <img
-            src={profile.heroPhoto}
-            alt={profile.name}
-            className="fade-in size-full object-cover object-[50%_35%] grayscale contrast-110"
-          />
+            <img
+              src={profile.heroPhoto}
+              alt={profile.name}
+              width={800}
+              height={1312}
+              sizes="(max-width: 1023px) 100vw, 50vw"
+              fetchPriority="high"
+              decoding="async"
+              className="fade-in size-full object-cover object-[50%_35%] grayscale contrast-110"
+            />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-black/70 to-transparent" />
           <div className="absolute top-6 right-4 lg:hidden">
             <HireBadge />
@@ -153,6 +158,9 @@ export function Hero() {
                   key={i}
                   src={src}
                   alt=""
+                  width={44}
+                  height={44}
+                  decoding="async"
                   className="size-11 rounded-full border-2 border-black object-cover"
                   style={{ marginLeft: i ? -14 : 0 }}
                 />
@@ -210,7 +218,11 @@ export function Hero() {
                       key={i}
                       src={src}
                       alt=""
+                      width={800}
+                      height={600}
+                      sizes="33vw"
                       loading="lazy"
+                      decoding="async"
                       className="aspect-[16/12] w-full rounded-xl object-cover object-top"
                     />
                   ))}

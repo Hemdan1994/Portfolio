@@ -1,28 +1,30 @@
-import personal from '../assets/images/hemdan.webp'
-import portrait from '../assets/images/hemdan-personal.jpeg'
-import aybank from '../assets/images/aybank.jpeg'
-import tapking from '../assets/images/tapking.jpeg'
-import mileo from '../assets/images/mileo.jpeg'
-import milaya from '../assets/images/milaya.jpeg'
-import drjobs from '../assets/images/dr.jpeg'
-import diwan from '../assets/images/diwan.jpg'
-import cvshots from '../assets/images/cvshots.jpeg'
-import eha from '../assets/images/eha.jpeg'
-import alnada from '../assets/images/alnada.jpg'
-import olive from '../assets/images/olive.jpg'
-import tekegy from '../assets/images/tekegy.jpeg'
-import bhub from '../assets/images/bhub.jpg'
-import miasset from '../assets/images/mi-asset.jpeg'
-import oper8ly from '../assets/images/oper8ly.jpeg'
-import facilities from '../assets/images/facilities.jpeg'
-import ektsad from '../assets/images/ektsad.jpeg'
-import bosla from '../assets/images/bosla.jpeg'
-import alfa from '../assets/images/alfa.jpeg'
-import smartjobs from '../assets/images/smartjobs.jpeg'
-import toutongi from '../assets/images/toutongi.jpeg'
-import freelady from '../assets/images/freelady.jpeg'
-import monairy from '../assets/images/monairy.jpg'
-import logo from '../assets/logo.png'
+import personal from '../assets/images/hemdan.webp?hq'
+import portrait from '../assets/images/hemdan-personal.jpeg?hero'
+import aybankTile from '../assets/images/aybank.jpeg?tile'
+import tapkingTile from '../assets/images/tapking.jpeg?tile'
+import mileoTile from '../assets/images/mileo.jpeg?tile'
+import milayaTile from '../assets/images/milaya.jpeg?tile'
+import drjobsTile from '../assets/images/dr.jpeg?tile'
+import diwanTile from '../assets/images/diwan.jpg?tile'
+import cvshotsTile from '../assets/images/cvshots.jpeg?tile'
+import ehaTile from '../assets/images/eha.jpeg?tile'
+import oliveTile from '../assets/images/olive.jpg?tile'
+import smartjobsTile from '../assets/images/smartjobs.jpeg?tile'
+import aybankCard from '../assets/images/aybank.jpeg?card'
+import tapkingCard from '../assets/images/tapking.jpeg?card'
+import mileoCard from '../assets/images/mileo.jpeg?card'
+import milayaCard from '../assets/images/milaya.jpeg?card'
+import drjobsCard from '../assets/images/dr.jpeg?card'
+import diwanCard from '../assets/images/diwan.jpg?card'
+import cvshotsCard from '../assets/images/cvshots.jpeg?card'
+import ehaCard from '../assets/images/eha.jpeg?card'
+import oliveCard from '../assets/images/olive.jpg?card'
+import toutongiCard from '../assets/images/toutongi.jpeg?card'
+import alfaCard from '../assets/images/alfa.jpeg?card'
+import aybankThumb from '../assets/images/aybank.jpeg?thumb'
+import mileoThumb from '../assets/images/mileo.jpeg?thumb'
+import freeladyThumb from '../assets/images/freelady.jpeg?thumb'
+import monairyThumb from '../assets/images/monairy.jpg?thumb'
 import hackathonPdf from '../assets/certificates/hackathon.pdf'
 import uiPdf from '../assets/certificates/certificate-ui.pdf'
 import topTechPdf from '../assets/certificates/top-tech.pdf'
@@ -39,7 +41,6 @@ export const profile = {
   resume: './Mohamed-Hemdan-Resume.pdf',
   photo: personal,
   heroPhoto: portrait,
-  logo,
   headline:
     'I turn complex product ideas into fast, pixel-perfect web experiences that users — and search engines — love.',
   summary: [
@@ -66,115 +67,6 @@ export const profile = {
   ],
 }
 
-export const stats = [
-  { value: '6+', label: 'Years shipping UI' },
-  { value: '19', label: 'Products launched' },
-  { value: '4', label: 'Countries served' },
-  { value: '98%', label: 'UI cert. score' },
-]
-
-export const services = [
-  {
-    title: 'Pixel-perfect UI',
-    copy: 'Figma and Adobe XD to production-ready, accessible components with obsessive spacing and motion.',
-  },
-  {
-    title: 'Next.js architecture',
-    copy: 'SSR, SSG, ISR, CMS delivery APIs, multilingual routing, and scalable front-end systems.',
-  },
-  {
-    title: 'Performance & SEO',
-    copy: 'Core Web Vitals, meta strategy, and PageSpeed work that holds up in banking and government products.',
-  },
-  {
-    title: 'Product animation',
-    copy: 'GSAP and Framer Motion used with intent — not decoration — so interfaces feel premium and clear.',
-  },
-  {
-    title: 'API-ready interfaces',
-    copy: 'REST, GraphQL, and CMS delivery APIs wired into dashboards and public sites that stay fast under real traffic.',
-  },
-  {
-    title: 'Prompt systems',
-    copy: 'Structured AI workflows for Figma-to-code and review — same pixel-perfect bar, faster shipping.',
-  },
-]
-
-export const process = [
-  {
-    n: '01',
-    title: 'Listen & map',
-    copy: 'Understand the product, users, CMS, and constraints before a single component is built.',
-  },
-  {
-    n: '02',
-    title: 'System first',
-    copy: 'Reusable tokens and components from Figma — not one-off pages that fall apart at scale.',
-  },
-  {
-    n: '03',
-    title: 'Build & animate',
-    copy: 'Next.js and React in production: SSR, multilingual routing, GSAP where motion earns it.',
-  },
-  {
-    n: '04',
-    title: 'Ship & prove',
-    copy: 'PageSpeed, SEO, accessibility, and review. Then iterate on what the metrics say.',
-  },
-]
-
-export const marqueeLine =
-  'I DESIGN SLEEK, HIGH-PERFORMANCE WEB EXPERIENCES THAT HELP BRANDS STAND OUT  —  '
-
-export const stack = [
-  'HTML5',
-  'CSS3',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Angular',
-  'Redux',
-  'TailwindCSS',
-  'GSAP',
-  'Umbraco CMS',
-  'Azure',
-  'Git',
-  'Figma',
-]
-
-export const education = [
-  {
-    degree: 'Bachelor of Computer Science',
-    school: 'El-Shorouk Academy',
-    duration: '2012 — 2016',
-    yearsStart: '2012',
-    yearsEnd: '2016',
-    location: 'Cairo, Egypt',
-    credential: 'B.Sc.',
-    note: 'Four-year computer science degree — the academic start of the path that led to production frontend work in 2018.',
-  },
-]
-
-export const educationPath = [
-  { year: '2012', label: 'Enrolled' },
-  { year: '2016', label: 'Graduated' },
-  { year: '2018', label: 'First frontend role' },
-  { year: 'Now', label: 'Dubai' },
-]
-
-export const aiPrompt = {
-  file: 'prompt.md',
-  role: 'Senior frontend on a live design system',
-  task: 'Turn this Figma frame into a reusable Next.js component',
-  constraints: [
-    'Tailwind tokens only — no one-off colors',
-    'Match the existing Card API',
-    'Keep PageSpeed, SEO, and accessibility',
-    'GSAP only if the file already moves',
-  ],
-}
-
 export const aiCases = [
   {
     title: 'Product AI',
@@ -193,317 +85,6 @@ export const aiCases = [
     context: 'Cursor · Copilot · ChatGPT',
     copy: 'Faster UI implementation on production work, with the same pixel-perfect and PageSpeed bar — AI drafts, I review and ship.',
     tags: ['Cursor', 'GitHub Copilot', 'ChatGPT'],
-  },
-]
-
-export const jobs = [
-  {
-    title: 'Senior Frontend Developer',
-    company: 'Modsoft UAE',
-    duration: 'July 2025 — Present',
-    location: 'Dubai, UAE (Onsite)',
-    description: [
-      'Use Umbraco CMS Delivery API with Next.js for stronger SSR and content flexibility.',
-      'Convert Figma mockups into reusable, animated, pixel-perfect components.',
-      'Use structured prompts and AI-assisted workflows to ship UI faster without skipping review.',
-      'Fix SEO issues and meta tags to achieve top scores on Google PageSpeed.',
-      'Test website performance and apply best practices for usability improvements.',
-      'Implement front-end architecture to support scalable UI concepts.',
-      'Add new features and review the application to meet user and design requirements.',
-      'Manage and translate multilingual content.',
-    ],
-    tech: ['Git', 'Microsoft Azure', 'Umbraco', 'Next.js', 'React', 'Cursor'],
-  },
-  {
-    title: 'Senior UI Developer',
-    company: 'Blackstone UAE',
-    duration: 'June 2024 — July 2025',
-    location: 'Cairo, Egypt (Hybrid)',
-    description: [
-      'Worked with the Government of Dubai and Ministry of Culture on internal audit systems.',
-      'Built internal systems with the Government of Abu Dhabi.',
-      'Used Angular 13 and 17 to convert Figma mockups into reusable, animated, pixel-perfect components.',
-      'Fixed SEO issues and meta tags to achieve top scores on Google PageSpeed.',
-      'Tested website performance and applied usability best practices.',
-      'Implemented front-end architecture to support scalable UI concepts.',
-      'Added features and reviewed the application against user and design requirements.',
-      'Managed and translated multilingual content.',
-    ],
-    tech: ['Git', 'Microsoft Azure', 'Angular', 'SEO', 'SSR'],
-  },
-  {
-    title: 'Senior Frontend Developer',
-    company: 'ML Word',
-    duration: 'May 2023 — March 2024',
-    location: 'Abu Dhabi, UAE (Remote)',
-    description: [
-      'Collaborated with AI developers on features like face recognition and CV parsing.',
-      'Developed reusable, animated, pixel-perfect components using Next.js and React.',
-      'Fixed responsive issues across a wide range of screen sizes.',
-      'Resolved SEO and meta tag issues to improve Google PageSpeed results.',
-      'Implemented SSR fixes and dynamic routing solutions.',
-      'Handled API requests using Axios.',
-      'Reviewed and added features per UI/UX requirements.',
-      'Translated and managed multilingual content.',
-    ],
-    tech: ['Next.js', 'React', 'Axios', 'AI APIs', 'Git', 'Jira', 'Bitbucket'],
-  },
-  {
-    title: 'Senior UI Developer',
-    company: 'Ibtikar Solutions UAE',
-    duration: 'September 2023 — January 2024',
-    location: 'Dubai, UAE (Remote — Freelance)',
-    description: [
-      'Converted UI/UX mockups into responsive, reusable, pixel-perfect components.',
-      'Developed websites using HTML5, CSS3, SASS, Bootstrap (v3–5), Normalize, ECMAScript, and jQuery.',
-    ],
-    tech: ['HTML5', 'CSS3', 'SASS', 'Bootstrap', 'Normalize', 'ECMAScript', 'jQuery'],
-  },
-  {
-    title: 'Senior UI Developer',
-    company: 'Dr.jobs',
-    duration: 'March 2022 — May 2023',
-    location: 'Abu Dhabi, UAE (Remote)',
-    description: [
-      'Built responsive, pixel-perfect UI components from UI/UX designs.',
-      'Debugged and refactored application code to improve performance.',
-      'Developed reusable components using React and Next.js (SSR, CSR, caching).',
-      'Improved page speed and SEO through best practices.',
-      'Implemented cache services using Workbox.',
-      'Resolved responsive design issues across devices.',
-    ],
-    tech: [
-      'HTML5',
-      'CSS3',
-      'SASS',
-      'Bootstrap',
-      'ECMAScript 6',
-      'React',
-      'Next.js',
-      'Git',
-      'Jira',
-      'Bitbucket',
-      'Elasticsearch',
-      'Kibana',
-    ],
-  },
-  {
-    title: 'Front-end Developer',
-    company: 'TekEgy',
-    duration: 'December 2018 — May 2020',
-    location: 'Remote',
-    description: [
-      'Developed websites using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery.',
-      'Refactored and cleaned legacy code from unused features.',
-    ],
-    tech: ['HTML5', 'CSS3', 'Bootstrap', 'ECMAScript 6', 'jQuery', 'Normalize'],
-  },
-  {
-    title: 'Front-end Developer (Magento)',
-    company: 'Dema for Advertising Digital Printing',
-    duration: 'October 2019 — March 2022',
-    location: 'Remote (Part-time)',
-    description: [
-      'Designed and developed website pages using HTML5, CSS3, Bootstrap (3–4), Normalize, ECMAScript 6, and jQuery.',
-      'Customized and modified existing templates.',
-    ],
-    tech: ['HTML5', 'CSS3', 'Bootstrap', 'ECMAScript 6', 'jQuery', 'Normalize'],
-  },
-]
-
-export const skills = [
-  { name: 'HTML & CSS', level: 98, category: 'frontend' },
-  { name: 'JavaScript', level: 90, category: 'frontend' },
-  { name: 'React', level: 80, category: 'frontend' },
-  { name: 'Redux', level: 85, category: 'frontend' },
-  { name: 'TypeScript', level: 75, category: 'frontend' },
-  { name: 'Next.js', level: 80, category: 'frontend' },
-  { name: 'Angular', level: 65, category: 'frontend' },
-  { name: 'TailwindCSS', level: 85, category: 'frontend' },
-  { name: 'Bootstrap', level: 95, category: 'frontend' },
-  { name: 'Material UI', level: 75, category: 'frontend' },
-  { name: 'Shadcn/ui', level: 70, category: 'frontend' },
-  { name: 'Node.js', level: 50, category: 'backend' },
-  { name: 'PHP', level: 40, category: 'backend' },
-  { name: 'RESTful APIs', level: 80, category: 'backend' },
-  { name: 'GraphQL', level: 60, category: 'backend' },
-  { name: 'Git', level: 85, category: 'tools' },
-  { name: 'Jira', level: 85, category: 'tools' },
-  { name: 'Microsoft Azure', level: 85, category: 'tools' },
-  { name: 'Adobe Suite', level: 90, category: 'tools' },
-  { name: 'Docker', level: 65, category: 'tools' },
-  { name: 'Figma', level: 75, category: 'tools' },
-  { name: 'Jest', level: 75, category: 'tools' },
-  { name: 'Jasmine', level: 70, category: 'tools' },
-  { name: 'Prompt engineering', level: 82, category: 'ai' },
-  { name: 'Cursor', level: 85, category: 'ai' },
-  { name: 'ChatGPT', level: 80, category: 'ai' },
-  { name: 'GitHub Copilot', level: 75, category: 'ai' },
-] as const
-
-export const projects = [
-  {
-    title: 'Aybank',
-    description:
-      'Corporate banking platform with modern UI and content management. Built with Next.js and Umbraco CMS Delivery API. SSR/SSG, dynamic routing, multilingual support, and secure API handling.',
-    image: aybank,
-    tech: ['Next.js', 'Umbraco CMS', 'Tailwind CSS', 'React Query', 'Framer Motion'],
-    link: 'https://aybank.com',
-    featured: true,
-  },
-  {
-    title: 'Tapking',
-    description:
-      'Recruitment and talent platform with advanced filtering and dashboards. Next.js + Umbraco CMS, SSR/ISR, Redux Toolkit, lazy loading, code-splitting, and WCAG-accessible components.',
-    image: tapking,
-    tech: ['Next.js', 'Umbraco CMS', 'Material UI', 'Redux Toolkit', 'Framer Motion'],
-    link: 'https://tapking.com',
-    featured: true,
-  },
-  {
-    title: 'Mileo Hotels',
-    description:
-      'Hotel booking platform with CMS-driven content and a room booking interface. SSR, multilingual support, and GSAP / Framer Motion animations for a hospitality-grade feel.',
-    image: mileo,
-    tech: ['Next.js', 'Umbraco CMS', 'Tailwind CSS', 'GSAP', 'Framer Motion'],
-    link: 'https://mileohotels.com',
-    featured: true,
-  },
-  {
-    title: 'Milaya Properties',
-    description:
-      'Dubai real estate platform with direct listings and a zero-commission model. Property filters, community exploration, owner forms, transparent pricing, FAQs, and comparison tables.',
-    image: milaya,
-    tech: ['Next.js', 'Umbraco CMS', 'Tailwind CSS', 'React Query', 'Framer Motion'],
-    link: 'https://milayaproperties.com',
-    featured: true,
-  },
-  {
-    title: 'DrJobs',
-    description:
-      'Recruitment platform integrated with ATS providers like ZOHO and JobSoid. Employee and employer dashboards with advanced matching.',
-    image: drjobs,
-    tech: ['React 18', 'Material UI', 'Bootstrap', 'SASS', 'JavaScript'],
-    link: 'https://drjobs.ae',
-    featured: true,
-  },
-  {
-    title: 'Diwan E-Book Reader',
-    description:
-      'Digital learning platform for the UAE Ministry of Education featuring e-books, podcasts, videos, and magazines with interactive reading.',
-    image: diwan,
-    tech: ['HTML5', 'SASS', 'JavaScript', 'jQuery', 'Bootstrap'],
-    link: '#',
-    featured: true,
-  },
-  {
-    title: 'CV Shots',
-    description:
-      'Video resume platform connecting job seekers and employers with video introductions and advanced search.',
-    image: cvshots,
-    tech: ['HTML5', 'SASS', 'JavaScript', 'jQuery', 'Bootstrap'],
-    link: '#',
-    featured: false,
-  },
-  {
-    title: 'Print Persona',
-    description:
-      'E-commerce platform for custom print products on Magento 2, with online design tools and product customization.',
-    image: olive,
-    tech: ['Magento 2', 'HTML5', 'CSS3', 'JavaScript', 'jQuery'],
-    link: 'https://www.printpersona.com',
-    featured: false,
-  },
-  {
-    title: 'Egyptian Hotels Association',
-    description:
-      'Organization site for hotel rating, regulation, and industry standards in Egypt.',
-    image: eha,
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Ajax'],
-    link: 'http://www.egyptianhotels.org/',
-    featured: false,
-  },
-  {
-    title: 'Al-nada Mills',
-    description:
-      'Corporate website with products, categories, portfolio, and an interactive company timeline.',
-    image: alnada,
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Ajax'],
-    link: 'http://alnadamills.com',
-    featured: false,
-  },
-  {
-    title: 'Al-monairy Corn',
-    description:
-      'Company website with product catalogs, portfolio showcase, and an interactive timeline.',
-    image: olive,
-    tech: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap'],
-    link: 'https://olivelandeg.com',
-    featured: false,
-  },
-  {
-    title: 'Tekegy',
-    description: 'Company portfolio website featuring services, projects, and an interactive timeline.',
-    image: tekegy,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://tekegy.com',
-    featured: false,
-  },
-  {
-    title: 'B-HUB',
-    description: 'Business hub platform showcasing services, portfolio, and company milestones.',
-    image: bhub,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://theb-hub.com',
-    featured: false,
-  },
-  {
-    title: 'Olamarine',
-    description: 'E-commerce website for fishing equipment with locations in Cairo and Hurghada.',
-    image: bhub,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://olamarine.com',
-    featured: false,
-  },
-  {
-    title: 'Mi-asset',
-    description: 'RTL website showcasing services, portfolio, and timeline with Arabic support.',
-    image: miasset,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://mi-asset.com',
-    featured: false,
-  },
-  {
-    title: 'Oper8ly',
-    description: 'RTL corporate website with services, portfolio showcase, and company history.',
-    image: oper8ly,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://oper8ly.com',
-    featured: false,
-  },
-  {
-    title: 'Facilities',
-    description: 'RTL service company website with portfolio and interactive features.',
-    image: facilities,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: '#',
-    featured: false,
-  },
-  {
-    title: 'El Ektsad welbnok',
-    description: 'RTL news website with content management and timeline features.',
-    image: ektsad,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://elektsadwelbnooknews.com',
-    featured: false,
-  },
-  {
-    title: 'Bosla News',
-    description: 'RTL news platform featuring services, portfolio, and company timeline integration.',
-    image: bosla,
-    tech: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'jQuery'],
-    link: 'http://alboslanews.com',
-    featured: false,
   },
 ]
 
@@ -532,89 +113,6 @@ export const certificates = [
   },
 ]
 
-export const clients = [
-  'Government of Dubai',
-  'Ministry of Culture',
-  'Government of Abu Dhabi',
-  'UAE Ministry of Education',
-  'Aybank',
-  'Mileo Hotels',
-]
-
-export const cases = [
-  {
-    title: 'Aybank',
-    sector: 'Corporate banking',
-    host: 'aybank.com',
-    link: 'https://aybank.com',
-    image: aybank,
-    problem:
-      'A private bank needed a public platform that marketing could run from a CMS — without losing SEO or load speed.',
-    owned:
-      'Next.js on Umbraco Delivery API: SSR/SSG, multilingual routing, and PageSpeed-oriented meta.',
-    stack: ['Next.js', 'Umbraco CMS', 'Tailwind', 'React Query'],
-  },
-  {
-    title: 'Tapking',
-    sector: 'Recruitment product',
-    host: 'tapking.com',
-    link: 'https://tapking.com',
-    image: tapking,
-    problem:
-      'A talent platform needed filter-heavy dashboards that stayed fast and accessible as content changed.',
-    owned:
-      'Next.js + ISR, Redux Toolkit, lazy loading, and WCAG-minded components on Umbraco.',
-    stack: ['Next.js', 'Umbraco CMS', 'Material UI', 'Redux Toolkit'],
-  },
-  {
-    title: 'Mileo Hotels',
-    sector: 'Hospitality',
-    host: 'mileohotels.com',
-    link: 'https://mileohotels.com',
-    image: mileo,
-    problem:
-      'A hotel brand needed booking-ready pages that still felt premium on mobile.',
-    owned:
-      'SSR hotel content, multilingual UI, and GSAP / Framer Motion used on real booking flows.',
-    stack: ['Next.js', 'Umbraco CMS', 'GSAP', 'Tailwind'],
-  },
-  {
-    title: 'Milaya Properties',
-    sector: 'Dubai real estate',
-    host: 'milayaproperties.com',
-    link: 'https://milayaproperties.com',
-    image: milaya,
-    problem:
-      'Owners needed a zero-commission listing site with clear filters and direct contact.',
-    owned:
-      'Property filtering, community pages, owner forms, and comparison tables on a CMS-driven Next.js app.',
-    stack: ['Next.js', 'Umbraco CMS', 'Tailwind', 'React Query'],
-  },
-  {
-    title: 'DrJobs',
-    sector: 'Hiring platform',
-    host: 'drjobs.ae',
-    link: 'https://drjobs.ae',
-    image: drjobs,
-    problem:
-      'Employers and candidates needed dashboards wired into real ATS tools, not a brochure site.',
-    owned:
-      'React 18 UI, matching flows, and integrations with ZOHO and JobSoid.',
-    stack: ['React 18', 'Material UI', 'SASS', 'Bootstrap'],
-  },
-  {
-    title: 'Diwan E-Book Reader',
-    sector: 'UAE Ministry of Education',
-    host: 'Internal product',
-    link: '#',
-    image: diwan,
-    problem:
-      'The ministry needed a digital reader for e-books, podcasts, video, and magazines.',
-    owned: 'Interactive reading UI in a production learning platform.',
-    stack: ['HTML5', 'SASS', 'JavaScript', 'Bootstrap'],
-  },
-]
-
 export const heroStats = [
   { value: '19+', label: 'Products launched' },
   { value: '6+', label: 'Years of experience' },
@@ -622,9 +120,9 @@ export const heroStats = [
 ]
 
 export const mosaic = [
-  [aybank, tapking, mileo],
-  [milaya, drjobs, diwan],
-  [cvshots, eha, smartjobs],
+  [aybankTile, tapkingTile, mileoTile],
+  [milayaTile, drjobsTile, diwanTile],
+  [cvshotsTile, ehaTile, smartjobsTile],
 ]
 
 export const howIWork = [
@@ -671,7 +169,8 @@ export const experience = [
 export const featuredWork = [
   {
     title: 'Aybank',
-    image: aybank,
+    image: aybankCard,
+    cover: aybankTile,
     tags: ['Banking', 'Next.js', 'Umbraco'],
     link: 'https://aybank.com',
     about:
@@ -680,7 +179,8 @@ export const featuredWork = [
   },
   {
     title: 'Tapking',
-    image: tapking,
+    image: tapkingCard,
+    cover: tapkingTile,
     tags: ['Platform', 'Next.js', 'Redux'],
     link: 'https://tapking.com',
     about:
@@ -689,7 +189,8 @@ export const featuredWork = [
   },
   {
     title: 'Mileo Hotels',
-    image: mileo,
+    image: mileoCard,
+    cover: mileoTile,
     tags: ['Hospitality', 'Booking', 'GSAP'],
     link: 'https://mileohotels.com',
     about:
@@ -698,7 +199,8 @@ export const featuredWork = [
   },
   {
     title: 'Milaya Properties',
-    image: milaya,
+    image: milayaCard,
+    cover: milayaTile,
     tags: ['Real Estate', 'Dubai', 'Filters'],
     link: 'https://milayaproperties.com',
     about:
@@ -707,7 +209,8 @@ export const featuredWork = [
   },
   {
     title: 'DrJobs',
-    image: drjobs,
+    image: drjobsCard,
+    cover: drjobsTile,
     tags: ['Hiring', 'ATS', 'React'],
     link: 'https://drjobs.ae',
     about:
@@ -716,7 +219,8 @@ export const featuredWork = [
   },
   {
     title: 'Diwan Reader',
-    image: diwan,
+    image: diwanCard,
+    cover: diwanTile,
     tags: ['Gov', 'Education', 'E-Books'],
     link: '',
     about:
@@ -725,7 +229,8 @@ export const featuredWork = [
   },
   {
     title: 'CV Shots',
-    image: cvshots,
+    image: cvshotsCard,
+    cover: cvshotsTile,
     tags: ['Video CV', 'Hiring', 'UI'],
     link: '',
     about:
@@ -734,7 +239,8 @@ export const featuredWork = [
   },
   {
     title: 'Print Persona',
-    image: olive,
+    image: oliveCard,
+    cover: oliveTile,
     tags: ['E-Commerce', 'Magento 2', 'Custom'],
     link: 'https://www.printpersona.com',
     about:
@@ -743,7 +249,8 @@ export const featuredWork = [
   },
   {
     title: 'Egyptian Hotels',
-    image: eha,
+    image: ehaCard,
+    cover: ehaTile,
     tags: ['Association', 'Hospitality', 'Web'],
     link: 'http://www.egyptianhotels.org/',
     about:
@@ -756,33 +263,33 @@ export const serviceCards = [
   {
     title: 'Pixel-Perfect UI',
     copy: 'Figma and Adobe XD turned into production-ready, accessible components with obsessive spacing, typography, and responsive behavior across every screen size.',
-    image: milaya,
+    image: milayaCard,
   },
   {
     title: 'Next.js Development',
     copy: 'SSR, SSG, and ISR apps with multilingual routing, dynamic pages, and CMS delivery APIs such as Umbraco, built to scale from landing pages to full platforms.',
-    image: aybank,
+    image: aybankCard,
   },
   {
     title: 'Performance & SEO',
     copy: 'Core Web Vitals, meta strategy, caching, and PageSpeed work that holds up in banking, government, and hospitality products with real traffic.',
-    image: mileo,
+    image: mileoCard,
   },
   {
     title: 'Motion & Interaction',
     copy: 'GSAP and Framer Motion used with intent, from scroll-driven storytelling to micro-interactions, so interfaces feel premium without hurting speed.',
-    image: toutongi,
+    image: toutongiCard,
   },
   {
     title: 'Dashboards & APIs',
     copy: 'REST and GraphQL wired into dashboards with Redux, React Query, and clean state, so data-heavy products stay fast, readable, and easy to maintain.',
-    image: tapking,
+    image: tapkingCard,
   },
   {
     title: 'AI-Assisted Delivery',
     copy: 'Structured prompt systems for Figma-to-code, refactors, and review with Cursor, Copilot, and ChatGPT: faster shipping at the same senior quality bar.',
-    image: alfa,
+    image: alfaCard,
   },
 ]
 
-export const badgeFaces = [aybank, mileo, freelady, monairy]
+export const badgeFaces = [aybankThumb, mileoThumb, freeladyThumb, monairyThumb]

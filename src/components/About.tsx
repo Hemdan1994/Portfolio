@@ -93,7 +93,11 @@ export function About() {
             <img
               src={profile.photo}
               alt={profile.name}
+              width={800}
+              height={1200}
+              sizes="(max-width: 1023px) 28rem, 32rem"
               loading="lazy"
+              decoding="async"
               className="zoom-out-image size-full scale-125 object-cover object-center grayscale transition-[filter] duration-700 hover:grayscale-0"
             />
           </div>
